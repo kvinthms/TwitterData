@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Kevin Thomas w/ inspiration from the Dashboard Template · Bootstrap">
+
+    <title>
+        StudyEdge Stats
+    </title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="dashboard.css">
+
+    <style></style>
+
+</head>
+<body>
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <!--<div class="small-12 large-2 columns logo-wrapper">-->
+        <a href="#" class="navbar-brand col-sm-3 col-md-2 mr-0">
+            <img src="https://studyedge.com/wp-content/themes/studyedge/assets/images/study-edge-logo-white.png" width="100" height="50" alt="Study Edge">
+        </a>
+    <!--</div>-->
+    <input class="form-control w-100" type="text" placeholder="Search">
+    <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">
+                Sign out
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <!--These filler column elements are used (li - first 2) but shouldn't be necessary, CSS issue?-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="filler"></span>
+
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="filler"></span>
+
+                        </a>
+                    </li>
+                    <!-- Dashboard doesn't appear, don't know why-->
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <span data-feather="home"></span>
+                            Dashboard <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="file"></span>
+                            Orders
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="shopping-cart"></span>
+                            Products
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="users"></span>
+                            Customers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="bar-chart-2"></span>
+                            Reports
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="layers"></span>
+                            Integrations
+                        </a>
+                    </li>
+                </ul>
+
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>Saved reports</span>
+                    <a class="d-flex align-items-center text-muted" href="#">
+                        <span data-feather="plus-circle"></span>
+                    </a>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            Current month
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            Last quarter
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            Social engagement
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            Year-end sale
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- This chart display is broken, fix it create a generic graphic overlay -->
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                    <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
+                    </div>
+                </div>
+                <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                    <div style="position:absolute;width:200%;height:200%;left:0; top:0">
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Dashboard</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group mr-2">
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                    </div>
+                    <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                        This week
+                    </button>
+                </div>
+            </div>
+
+            <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="1947" height="820" style="display: block; height: 328px; width: 779px;"></canvas>
+
+            <h2>Section title</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Header</th>
+                            <th>Header</th>
+                            <th>Header</th>
+                            <th>Header</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#####</td>
+                            <td>This</td>
+                            <td>is</td>
+                            <td>a</td>
+                            <td>sample</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</div>
+</body>
+</html>
