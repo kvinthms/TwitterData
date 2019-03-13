@@ -25,7 +25,7 @@ module.exports.init = function() {
     app.use('/api/listings', listingsRouter);
 
     app.use('*/', function (req, res) {
-        res.sendFile(path.resolve('client/index.html'));
+        res.sendFile(path.resolve('client/dashboard.html'));
     });
 
     return app;
