@@ -80,6 +80,15 @@ body {
  * Navbar
  */
 
+.img-responsive {
+    height: auto;
+    width: auto;
+    max-height: 50px;
+    max-width: 50px;
+    line-height: 50px;
+    vertical-align: middle
+}
+
 .navbar-brand {
     padding-top: .75rem;
     padding-bottom: .75rem;

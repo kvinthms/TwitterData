@@ -18,13 +18,12 @@
 <body>
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
   <!--<div class="small-12 large-2 columns logo-wrapper">-->
-  <a href="#" class="navbar-brand col-sm-3 col-md-2 mr-0">
+  <a href="#" class="navbar-brand">
     <img src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c53e.png" width="50" height="50" alt="TweetEdge">
     Twitter Data Analytics
   </a>
 
   <!--</div>-->
-  <input class="form-control w-100" type="text" placeholder="Search">
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
       <a class="nav-link" href="#">
@@ -60,10 +59,10 @@
             </a>
           </li>
           <li class="nav-item">
-              <a href="location.html">
-                <span data-feather="file"></span>
-                Search by Locations
-              </a>
+            <a href="location.html">
+              <span data-feather="location"></span>
+              Location Search
+            </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
@@ -126,51 +125,45 @@
       </div>
     </nav>
   </div>
+</div>
 
-  <!--Insert display here for either trends or location feature-->
-  <!-- ng-model ng-click needs work; see if can make search bar do active search without click-->
-  <div class="row">
-  <div class="content">
-    <nav class="center">
-      <form novalidate class="simple form">
-        <input type="text" ng-model=""/>
-        <button class="btn btn-primary" ng-click="">Search</button>
-      </form>
-    </nav>
-  </div>
-  </div>
+<!--Insert display here for either trends or location feature-->
+<!-- ng-model ng-click needs work; see if can make search bar do active search without click-->
 
-
-
-  <!-- This chart display is broken, fix it create a generic graphic overlay -->
-  <!--
-  <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-    <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
-      <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
-        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
-        </div>
-      </div>
-      <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
-        <div style="position:absolute;width:200%;height:200%;left:0; top:0">
-        </div>
+<!-- This chart display is broken, fix it create a generic graphic overlay -->
+<!--
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+  <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+    <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+      <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
       </div>
     </div>
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h1 class="h2">Dashboard</h1>
-      <div class="btn-toolbar mb-2 mb-md-0">
-        <div class="btn-group mr-2">
-          <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-          <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-        </div>
-        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-          This week
-        </button>
+    <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+      <div style="position:absolute;width:200%;height:200%;left:0; top:0">
       </div>
     </div>
+  </div>
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Dashboard</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+      <div class="btn-group mr-2">
+        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+        <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+      </div>
+      <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        This week
+      </button>
+    </div>
+  </div>
 
-    <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="1947" height="820" style="display: block; height: 328px; width: 779px;"></canvas>
-    -->
+  <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="1947" height="820" style="display: block; height: 328px; width: 779px;"></canvas>
+  -->
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+
+  <div>
+    <a class="filler"></a>
+  </div>
 
   <h2>Section title</h2>
   <div class="table-responsive">
@@ -195,8 +188,19 @@
       </tbody>
     </table>
   </div>
-  </main>
-</div>
+
+  <div class="row">
+    <div class="content">
+      <nav class="center">
+        <form novalidate class="simple form">
+          <input type="text" ng-model=""/>
+          <button class="btn btn-primary" ng-click="">Search</button>
+        </form>
+      </nav>
+    </div>
+  </div>
+</main>
+
 <!--May need a jQuery script tag here-->
 </body>
 </html>
