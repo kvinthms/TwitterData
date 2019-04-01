@@ -1,4 +1,4 @@
-require('rootpath')();
+//require('rootpath')();
 var config = require('./config'),
     mongoose = require('mongoose'),   
     express = require('./express');
