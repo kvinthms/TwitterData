@@ -10,8 +10,6 @@ angular.module('listings', []).factory('Listings', function($http) {
 
     delete: function(id) {
         return $http.delete('https://polar-cove-30565.herokuapp.com/api/listings/' + id);
-
-
     }
   };
 

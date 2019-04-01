@@ -92,6 +92,7 @@
 
   <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <!--This is a really stupid fix for now, but it keeps the navbar from covering the title... Should definitely find a different way in the future-->
+    <!--This does NOT fix the scaling issue; when shrinking the browser window everything gets pushed further down, revealing this section...-->
     <div>
       <ul>
         <li>
@@ -101,12 +102,12 @@
     </div>
 
     <!--Form to Receive Search Keyword-->
-    <h2>Section title</h2>
+    <h2>Search By Keyword</h2>
     <div class="row" ng-controller="TwitterController">
       <div class="content">
         <nav class="center">
           <form novalidate class="simple form">
-            <input type="text" ng-model="search" id="search">
+            <input type="text" placeholder="Enter a keyword..." ng-model="search" id="search">
             <button class="btn btn-primary" ng-click="getTweetsFromQuery(document.getElementById('search'))">Search</button>
           </form>
         </nav>
