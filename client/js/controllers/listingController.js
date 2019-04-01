@@ -1,52 +1,28 @@
-angular.module('listings').controller('ListingsController', ['$scope', 'Listings', 
+angular.module('TwitterData').controller('TwitterController', ['$scope', '$http', 
   function($scope, Listings) {
-    /* Get all the listings, then bind it to the scope */
-    Listings.getAll().then(function(response) {
-      $scope.listings = response.data;
-    }, function(error) {
-      console.log('Unable to retrieve listings:', error);
-    });
+    var Twit = requires('twit')
+    var config = requires('./config/config.js')
+    var T = new Twit({
+      consumer_key: config.consumer_key,
+      consumer_secret: config.consumer_secret,
+      access_token: config.access_token,
+      access_token_secret: config.access_token_secret,
+    })
 
-    $scope.detailedInfo = undefined;
-
-    $scope.addListing = function() {
-        //This code from bootcamp 2
-        Listings.create($scope.newListing).then(function(response) {
-            $scope.listings.push(
-                //response.data
-                $scope.newListing);
-                location.reload();
-        }, function (error) {
-            console.log('Unable to retrieve listings:', error);
-        });
-
+    $scope.getTweetsFromQuery = function(query){
+      T.Get('search/tweets', {q:query, count: 100}, function(err, data, response){
+        console.log(data);
+        $scope.search = data; 
+        console.log(data);
+      })
     };
 
-    $scope.deleteListing = function(id) {
-
-        console.log(id);
-       Listings.delete(id).then(function(res){
-           console.log("in delete");
-
-           if (res.status == 200) {
-               for(var i = 0; i< $scope.listings.length; i++) {
-                   console.log("in for");
-                   if (res.data.code == $scope.listings[i].code) {
-                       console.log("in if");
-                       $scope.listings.splice(i, 1);
-                   }
-               }
-           }
-           console.log("works");
-
-       }, function(error) {
-           console.log('ERROR', error);
-       });
-
-    };
-
-    $scope.showDetails = function(index) {
-      $scope.detailedInfo = $scope.listings[index];
+    $scope.getTrendingFromSelection = function(woeid){
+      T.Get(trends/places, {id: woeid}, function(err, data, response){
+        console.log(data); 
+        $scope.trends = data; 
+        console.log(data);
+      })
     };
   }
 ]);

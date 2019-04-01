@@ -1,3 +1,6 @@
+var TwitterDataAppModule = angular.module("TwitterDataApp", []);
+TwitterDataAppModule.controller("twitterctl", function($scope, $http){
+
 var Twit = requires('twit')
 var config = requires('./config/config.js')
 var T = new Twit({
@@ -12,4 +15,13 @@ function getTweetsFromQuery(query){
         console.log(data);
 	$scope.search = data; 
     })
-}
+};
+
+function getTrendingFromSelection(woeid){
+    T.Get(trends/places, {id: woeid}, function(err, data, response){
+        console.log(data); 
+	$scope.trends = data; 
+    })
+};
+
+});
