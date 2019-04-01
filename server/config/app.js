@@ -1,8 +1,9 @@
-//require('rootpath')();
+require('rootpath')();
 var config = require('./config'),
     mongoose = require('mongoose'),   
     express = require('./express');
 
+/*
 module.exports.start = function() {
   var app = express.init();
   let port = process.env.PORT;
@@ -13,7 +14,7 @@ module.exports.start = function() {
     console.log('App listening on port', config.port);
   });
 };
-
+*/
 /*Code copied from login project from here down, same as other app.js file. Does it do anything?*/
 (function () {
   'use strict';

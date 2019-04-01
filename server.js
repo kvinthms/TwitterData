@@ -1,4 +1,4 @@
-//require('rootpath')();
+require('rootpath')();
 var app_og = require('./server/config/app'),
     express = require('express'),
     app = express(),

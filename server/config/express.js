@@ -5,7 +5,7 @@ var path = require('path'),
     bodyParser = require('body-parser'),
     config = require('./config'),
     listingsRouter = require('../routes/listings.server.routes');
-
+/*
 module.exports.init = function() {
     //connect to database
     mongoose.connect(config.db.uri);
@@ -23,10 +23,10 @@ module.exports.init = function() {
 
 
     app.use('/api/listings', listingsRouter);
-
-    app.use('*/', function (req, res) {
-        res.sendFile(path.resolve('client/index.html'));
+*/
+   // app.use('*/', function (req, res) {
+  /*      res.sendFile(path.resolve('client/index.html'));
     });
-
+*/
     return app;
 };  
