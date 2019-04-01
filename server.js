@@ -3,7 +3,7 @@ var app_og = require('./server/config/app'),
     express = require('express'),
     app = express(),
     config = require('config.json'),
-    config_og = require('/server/config/config'),
+    config_og = require('./server/config/config'),
     session = require('express-session'),
     bodyParser = require('body-parser'),
     expressJwt = require('express-jwt');
@@ -31,7 +31,7 @@ app.get('/', function (req, res) {
 
 // start server
 module.exports.start = function() {
-    //var app = express.init();
+    //var app_og = express.init();
     let port = process.env.PORT;
     if (port == null || port == "") {
         port = 8000;
