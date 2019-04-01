@@ -3,8 +3,8 @@ var path = require('path'),
     mongoose = require('mongoose'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
-    config = require('./config'),
-    listingsRouter = require('../routes/listings.server.routes');
+    config = require('./config');
+    //listingsRouter = require('../routes/listings.server.routes');
 /*
 module.exports.init = function() {
     //connect to database
