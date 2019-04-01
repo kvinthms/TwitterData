@@ -10,6 +10,7 @@ var T = new Twit ({
 function getTrendingFromSelection(woeid){
     T.Get(trends/places, {id: woeid}, function(err, data, response){
         console.log(data); 
+	$scope.trends = data; 
     })
 };
 

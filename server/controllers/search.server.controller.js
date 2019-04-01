@@ -9,6 +9,7 @@ var T = new Twit({
 
 function getTweetsFromQuery(query){
     T.Get('search/tweets', {q:query, count: 100}, function(err, data, response){
-        console.log(data); 
+        console.log(data);
+	$scope.search = data; 
     })
 }
