@@ -1,7 +1,7 @@
 require('rootpath')();
 var config = require('./config'),
-    mongoose = require('mongoose'),   
-    express = require('./express');
+    mongoose = require('mongoose');
+    //express = require('./express');
 
 /*
 module.exports.start = function() {

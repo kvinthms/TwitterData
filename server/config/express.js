@@ -28,5 +28,5 @@ module.exports.init = function() {
   /*      res.sendFile(path.resolve('client/index.html'));
     });
 */
-    return app;
+    //return app;
  //};
