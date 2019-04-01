@@ -10,19 +10,25 @@ angular.module('TwitterData').controller('TwitterController', ['$scope', '$http'
     })
 
     $scope.getTweetsFromQuery = function(query){
-      T.Get('search/tweets', {q:query, count: 100}, function(err, data, response){
-        console.log(data);
-        $scope.search = data; 
-        console.log(data);
+      T.Get('search/tweets', {q:query, count: 100})
+      .success(function(data){
+        $scope.search = data;
       })
+      .error(function(data, status){
+        console.error("Failed to load", status, data);
+        $scope.search = { }; 
+      });
     };
 
     $scope.getTrendingFromSelection = function(woeid){
-      T.Get(trends/places, {id: woeid}, function(err, data, response){
-        console.log(data); 
-        $scope.trends = data; 
-        console.log(data);
+      T.Get('trends/places', {id: woeid})
+      .success(function(data){
+        $scope.search = data;
       })
+      .error(function(data, status){
+        console.error("Failed to load", status, data);
+        $scope.search = { }; 
+      });
     };
   }
 ]);
