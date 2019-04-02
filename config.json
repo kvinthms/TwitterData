@@ -1,0 +1,5 @@
+{
+    "apiUrl":  "http://localhost:8080/api",
+    "connectionString": "mongodb://localhost:27017/account-db",
+    "secret": "cen3031"
+}
