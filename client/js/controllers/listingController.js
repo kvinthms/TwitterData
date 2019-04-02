@@ -1,4 +1,5 @@
-angular.module('TwitterData').controller('TwitterController', ['$scope', '$http', 
+var app = angular.module('TwitterData', []);
+app.controller('TwitterController', ['$scope', '$http', 
   function($scope, Listings) {
     
     /*
