@@ -1,4 +1,5 @@
 require('rootpath')();
+//require('angular');
 var config = require('./config'),
     mongoose = require('mongoose');
     //express = require('./express');
@@ -16,7 +17,7 @@ module.exports.start = function() {
 };
 */
 /*Code copied from login project from here down, same as other app.js file. Does it do anything?*/
-(function () {
+(function (angular) {
   'use strict';
 
   angular.module('app', ['ui.router']).config(config).run(run);
