@@ -8,7 +8,7 @@ const access_token = '1070800768230400001-S7sB9x9emGcGJeNPQHOp6xaCUxLqMl';
 const access_token_secret = 'V7djS4GQmrl3d2soJEm0T30KSev6bpP15i7fJ4dFemNuF';
 module.exports = { 
 	db: { 
-		uri: '',  
+		uri: 'mongodb://user:p4ssword@ds229826.mlab.com:29826/twitterdata',  
 	}, 
 
 	port: process.env.PORT || 8080, 

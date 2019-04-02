@@ -11,5 +11,6 @@
 
 #server/config/config.js
 .idea
+.tern-project
 
 
