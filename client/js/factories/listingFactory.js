@@ -1,17 +1,18 @@
-angular.module('listings', []).factory('Listings', function($http) {
-  var methods = {
-    getAll: function() {
-      return $http.get('https://polar-cove-30565.herokuapp.com/api/listings');
-    },
-	
-	create: function(listing) {
-	  return $http.post('https://polar-cove-30565.herokuapp.com/api/listings', listing);
-    }, 
+angular.module('foo', []).factory('SearchResults', function() {
+  var Twit = requires('twit');
+  var config = requires('./config/config.js');
+  var T = new Twit({
+    consumer_key: config.consumer_key,
+    consumer_secret: config.consumer_secret,
+    access_token: config.access_token,
+    access_token_secret: config.access_token_secret
+  });
 
-    delete: function(id) {
-        return $http.delete('https://polar-cove-30565.herokuapp.com/api/listings/' + id);
-    }
+  var searchResults = function(query){
+    T.get('search/tweets', {q: query, count: 100}, function(err, data, response) {
+      console.log(data)
+    })
   };
 
-  return methods;
+  return searchResults.data;
 });
