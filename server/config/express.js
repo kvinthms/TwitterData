@@ -4,8 +4,9 @@ var path = require('path'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     config = require('./config'),
-    listingsRouter = require('../routes/listings.server.routes');
-    tweetRouter = require('../routes/tweet.server.routes.js');
+    listingsRouter = require('../routes/listings.server.routes'),
+    tweetRouter = require('../routes/tweet.server.routes.js'),
+    cors = require(cors);
 
 module.exports.init = function() {
     //connect to database
@@ -20,14 +21,17 @@ module.exports.init = function() {
     //body parsing middleware
     app.use(bodyParser.json());
 
-    app.use("/", express.static('client'));
+    app.use(cors());
 
+    app.use("/", express.static('client')); //the argument for .static() might need changing
 
     app.use('/api/listings', listingsRouter);
 
+    app.use('/api/twitter', tweetRouter);
+
     app.use('*/', function (req, res) {
         res.sendFile(path.resolve('client/index.html'));
-    });
+    }); //this should take ambiguous routes to index.html
 
     return app;
 };  

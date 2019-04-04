@@ -1,7 +1,8 @@
 
 /* Dependencies */
 var mongoose = require('mongoose'),
-    Listing = require('../models/listings.server.model.js');
+    Listing = require('../models/listings.server.model.js'),
+    config = require('../config/config');
 
 /*
   In this file, you should use Mongoose queries in order to retrieve/add/remove/update listings.
@@ -39,44 +40,48 @@ exports.read = function(req, res) {
 /* Update a listing */
 exports.update = function(req, res) {
     var listing = req.listing;
-
     //Unknown if real function must look at mongoose methods for confirm
     //Unknown if method actually does what its supposed to
     //listing.name = req.body.name etc. .code .address
-    listing.name = req.body.name;
-    listing.code = req.body.code;
-    listing.address = req.body.address;
-    listing.save(function (err) {
-        res.json(req.listing);
-        if (err) throw err;
+    Listing.findOneAndUpdate({_id: listing._id}, {code:req.body.code, name:req.body.name, address:req.body.address}, {new: true}, (err, listing) => {
+        if (err) {
+            console.log(err);
+            res.status(400).send(err);
+        }
+        else {
+            console.log(listing);
+            res.status(200).json(listing);
+        }
     });
-
-
-
 };
 
 /* Delete a listing */
 exports.delete = function(req, res) {
     var listing = req.listing;
 
-    listing.remove(function (err) {
-        if (err) {res.status(400).send(err);}
-        else { res.send(listing);}
-    });
-
+    listing.findOneAndRemove({_id:listing._id}, (err, listing) => {
+        if (err) {
+            console.log(err);
+            res.status(400).send(err);
+        }
+        else {
+            res.status(200).json(listing);
+        }
+    })
 };
 
 exports.list = function(req, res) {
 
 
-    Listing.find().sort("code"/*{code: 1}*/).exec(function (err, listing) {
+    return Listing.find({}, (err, listings) => {
         if (err) {
+            console.log(err);
             res.status(400).send(err);
-        } else {
-            res.send(listing);
         }
-    });
-
+        else {
+            return res.status(200).json(listings);
+        }
+    }).sort({code:1});
 };
 
 exports.listingByID = function(req, res, next, id) {
