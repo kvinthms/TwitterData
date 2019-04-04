@@ -5,6 +5,7 @@ var path = require('path'),
     bodyParser = require('body-parser'),
     config = require('./config'),
     listingsRouter = require('../routes/listings.server.routes');
+    tweetRouter = require('../routes/tweet.server.routes.js');
 
 module.exports.init = function() {
     //connect to database
