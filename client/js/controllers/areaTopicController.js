@@ -2,6 +2,7 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
 	($scope, Twitter) => {
 		var responseData, lineGraph, barGraphTweets, barGraphUsers = null;
 		var barUrls = [];
+		var lineUrls = [];
 		var place = sessionStorage.getItem('place');
 		var topic = sessionStorage.getItem('topic');
 
@@ -14,34 +15,38 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
 		if (!place){
 			$scope.areaSearch = false;
 			$scope.topic = topic;
-			Twitter.trendTopic(topic).then((resp) => {
-				if(resp.data == "topic has no tweets to show"){
+			Twitter.trendTopic(topic).then((response) => {
+				if(response.data == "no tweets here"){
 					console.log("no tweets");
 					emptyData();
 					return;
 				}
-				responseData = resp.data.statuses;
+				responseData = response.data.statuses;
 				$scope.barTweetsFavorites();
 				favBarClick();
 				$scope.lineRetweets();
+				lineClick();
 				$scope.barUsersFollowers();
+				userBarClick();
 			});
 		}
 		else{
 			$scope.areaSearch = true;
 			$scope.topic = topic;
 			$scope.place = place;
-			Twitter.areaTopic(place, topic).then((resp) => {
-				if(resp.data == "topic has no tweets to show"){
+			Twitter.areaTopic(place, topic).then((response) => {
+				if(response.data == "no tweets here"){
 					console.log("no tweets");
 					emptyData();
 					return;
 				}
-				responseData = resp.data.statuses;
+				responseData = response.data.statuses;
 				$scope.barTweetsFavorites();
 				favBarClick();
 				$scope.lineRetweets();
+				lineClick();
 				$scope.barUsersFollowers();
+				userBarClick();
 			});
 		}
 
