@@ -33,7 +33,7 @@ function checkValidArea(userInput) {
             }
             for (let i=0; i<response.length; i++){
                 if(response[i].name == userInput) {
-                    console.log("woeid: " = response[i].woeid);
+                    console.log("woeid: " + response[i].woeid);
                     resolve(response[i].woeid);
                 }
             };
