@@ -6,17 +6,16 @@
 <head>
   <!--Metadata about the page, nothing of functional importance here-->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Kevin Thomas w/ inspiration from the Dashboard Template · Bootstrap">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!--Browswer Tab Title-->
   <title>
-    Twitter Data Analytics
+    TwitterData
   </title>
 
   <!--StyleSheets-->
   <!--BootStrap-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <!--Our Custom CSS Stylesheet-->
   <link rel="stylesheet" href="styles/dashboard.css">
 
@@ -35,165 +34,71 @@ ng-controller directive assigns the controller to the page as well
 
 all containers within the body should also inherit this assignment
 -->
-<body ng-app="TwitterData" ng-controller="TwitterController">
+<body ng-app="TwitterData">
 
   <!--Navigation Bar-->
   <!--All this class stuff is for the styling, it's bootstrap.-->
-  <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+  <nav class="navbar navbar-dark shadow-sm">
 
     <!--Logo-->
     <!--clicking the image will link back to the homepage thanks to href-->
-    <div class="small-12 large-2 columns logo-wrapper">
       <a href="index.html" class="navbar-brand">
-        <img src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c53e.png" width="50" height="50" alt="TweetEdge">
-        Twitter Data Analytics
+        <img src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c53e.png" width="50" height="50" alt="Home">
+        TwitterData
       </a>
-    </div>
 
     <!--Sign Out Button (no functionality yet)-->
-    <!--
-      Apparently it's being formatted with an unordered list;
-      Probably a good idea to find a new way to do this in sprint 3
-    -->
-    <ul class="navbar-nav px-3">
-      <li class="nav-item text-nowrap">
-        <a class="nav-link" href="#">Sign out</a>
-      </li>
-    </ul>
+    <div class="sign-out">
+        <button class="btn btn-outline-secondary">Sign out</button>
+    </div>
   </nav>
 
-  <!--Dashboard-->
-  <div class="container-fluid row">
-    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-      <div class="sidebar-sticky">
-        <ul class="nav flex-column">
-          <!--
-            These filler column elements are used to buffer the top of the 
-            dashboard to prevent the navbar from covering essential 
-            elements
-          -->
-          <!--(The filler elements are the first two <li> tags here)-->
-          <li class="nav-item">
-            <a class="nav-link" href="#"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#">Dashboard</a>
-          </li>
-          <li class="nav-item">
-            <a href="location.html">Location Search</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Search Tweets</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Trending Topics</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Who Follows Who?</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">View Data</a>
-          </li>
-        </ul>
-
-        <!--'Data Sets' portion of Dashboard-->
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-          <span>Data Sets</span>
-          <a class="d-flex align-items-center text-muted" href="#"></a>
-        </h6>
-        <ul class="nav flex-column mb-2">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Current month</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Last quarter</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Engagement</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Users</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div> <!--(end of dashboard)-->
-
-  <!--This <main> tag just tells us that this content is unique to this page-->
-  <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-    <!--This is a really stupid fix for now, but it keeps the navbar from covering the 
-      title... Should definitely find a different way in the future-->
-    <!--This does NOT fix the scaling issue; when shrinking the browser window 
-      everything gets pushed further down, revealing this section...-->
-    <div>
-      <ul>
-        <li>
-          <a></a>
-        </li>
-      </ul>
-    </div>
-
-    <!--Form to Receive Search Keyword-->
-    <h2>Search By Keyword</h2>
-    <div class="row">
-      <div class="content">
-        <nav class="center">
-          <form novalidate class="simple form">
-            <!--
-              This is the text input box
-              The ng-model value is likely wrong. I'm still trying to figure out 
-              how to get anything to display from the model/controller side
-            -->
-            <input type="text" ng-model="query" placeholder="Enter a keyword..." id="search">
-            <!--
-            Here's the submit button
-            ng-click should run the query method in the controller and should pass that 
-            method the value which is in the text field
-            according to a stack overflow page, using 
-            document.getElementById('search') should return the element in the 
-            input with the id of "search"
-            -->
-            <button class="btn btn-primary" ng-click="getTweetsFromQuery(document.getElementById('search'))">Search</button>
-          </form>
-        </nav>
-      </div>
-
-      <!--Table To Display Results-->
-      <div class="table-responsive">
-        <table class="table table-sm">
-          <!--Head of the table-->
-          <thead>
-            <tr>
-              <th>Tweet Text</th>
-            </tr>
-          </thead>
-          <!--Body of the table, where the data should go-->
-          <tbody>
-            <!--
-            ng-repeat should put the desired info from every single object in the json doc here, row by row.
-            -->
-            <tr ng-repeat="tweet in searchResults">
-              <td>{{ tweet.text }}</td>
-            </tr>
-          </tbody>
-        </table>
+  <div class="container-fluid" ng-controller="TwitterController">
+    <div class="row justify-content-center">
+      <div class="col-8 align-items-center">
+        <div class="row align-items-center">
+          <div class="input-group input-group-lg topmargin-lg">
+            <div class="input-group-prepend">
+              <div class="btn-group btn-group-toggle hide-btn" data-toggle="buttons">
+                <label class="btn btn-outline-secondary active" ng-click="setSearch(false)">
+                  <input type="radio" name="area-button" autocomplete="off">Area
+                </label>
+              </div>
+            </div>
+            <input placeholder="Keyword" type="text" class="form-control" ng-model="userPlace" ng-keyup="$event.keyCode == 13 ? searchTrend() : null">
+            <div class="input-group-append">
+              <button ng-click="searchTrend()" class="btn btn-outline-secondary">See Trends</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </main>
+    <div class="row justify-content-center">
+      <div class="col-8 topmargin-lg">
+        <canvas id="test-chart"></canvas>
+        <div id="no-results" style="display: none">
+          <h1>Sorry</h1>
+          <h2>No search results found ... Try again</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
 
   <!--Script Tags-->
   <!--jquery-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <!--bootstrap-->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
   <!--angular error stuff-->
   <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+
+  <!--Charts-->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  
   <!--Our own js files-->
   <script src="js/app.js"></script>
   <script src="js/controllers/listingController.js"></script>
-</body>
-
-</html>
+  <script src="js/factories/twitterFactory.js"></script>

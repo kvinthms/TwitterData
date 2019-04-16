@@ -1,5 +1,5 @@
 //define the module our app depends on here
-angular.module('foo', []);
+angular.module('twitter', []);
 
 //init the app
-var app = angular.module('TwitterData', ['foo']);
+var app = angular.module('TwitterData', ['twitter']);
