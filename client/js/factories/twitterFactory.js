@@ -3,12 +3,12 @@ angular.module('twitter').factory('Twitter', function($http){
   //methods contains all the methods for handling http requests we will need here
   var methods = {
     getAll: function(){
-      return $http.get('/api/twitter');
+      return $http.get('http://vast-scrubland-38554.herokuapp.com/api/twitter');
     },
 
     //runs an http GET request on a place thru the API
     getTrends: function(userPlace){
-      return $http.get('/api/twitter/'+userPlace);
+      return $http.get('http://vast-scrubland-38554.herokuapp.com/api/twitter/'+userPlace);
     },
 
     //runs an http GET request on a topic based on location thru the API
@@ -21,7 +21,7 @@ angular.module('twitter').factory('Twitter', function($http){
       else {
         isHash = false; //boolean keeps track of what is hashtag
       }
-      return $http.get('/api/twitter/topicByArea/' + place + '/' + topic + '/' + isHash);
+      return $http.get('http://vast-scrubland-38554.herokuapp.com/api/twitter/topicByArea/' + place + '/' + topic + '/' + isHash);
     },
 
 
@@ -35,15 +35,15 @@ angular.module('twitter').factory('Twitter', function($http){
       else{
         isHash = false;
       }
-      return $http.get('/api/twitter/trend/' + topic + '/' + isHash);
+      return $http.get('http://vast-scrubland-38554.herokuapp.com/api/twitter/trend/' + topic + '/' + isHash);
     },
 
     create: function(listing){
-      return $http.post('/api/listings', listing);
+      return $http.post('http://vast-scrubland-38554.herokuapp.com/api/listings', listing);
     },
 
     delete: function(id){
-      return $http.delete('/api/listings/' + id);
+      return $http.delete('http://vast-scrubland-38554.herokuapp.com/api/listings/' + id);
     }
   };
 
