@@ -5,10 +5,10 @@ var Twitter = require('twitter');
 var twitter_response;
 
 var client = new Twitter({
-    consumer_key: '0Ce89vEhtDVJRrznQRs13kVnQ';
-    consumer_secret: 'RceoBEhRvmGWioysz5PrDDGgv1OhKlITmbKkjEIpJZTxc6BZZM';
-    access_token_key: '1070800768230400001-S7sB9x9emGcGJeNPQHOp6xaCUxLqMl';
-    access_token_secret: 'V7djS4GQmrl3d2soJEm0T30KSev6bpP15i7fJ4dFemNuF';
+    consumer_key: '0Ce89vEhtDVJRrznQRs13kVnQ',
+    consumer_secret: 'RceoBEhRvmGWioysz5PrDDGgv1OhKlITmbKkjEIpJZTxc6BZZM',
+    access_token_key: '1070800768230400001-S7sB9x9emGcGJeNPQHOp6xaCUxLqMl',
+    access_token_secret: 'V7djS4GQmrl3d2soJEm0T30KSev6bpP15i7fJ4dFemNuF'
 });
 
 //geocoder api
