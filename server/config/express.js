@@ -5,12 +5,12 @@ var path = require('path'),
     bodyParser = require('body-parser'),
     config = require('./config'),
     listingsRouter = require('../routes/listings.server.routes'),
-    tweetRouter = require('../routes/tweet.server.routes.js'),
+    twitterRouter = require('../routes/tweet.server.routes.js'),
     cors = require(cors);
 
 module.exports.init = function() {
     //connect to database
-    mongoose.connect(config.db.uri);
+    mongoose.connect(config.db.uri, {useMongoClient: true});
 
     //initialize app
     var app = express();
@@ -23,15 +23,15 @@ module.exports.init = function() {
 
     app.use(cors());
 
-    app.use("/", express.static('client')); //the argument for .static() might need changing
+    app.use('/', express.static(path.join(__dirname,'./../../client'))); //the argument for .static() might need changing
 
     app.use('/api/listings', listingsRouter);
 
     app.use('/api/twitter', tweetRouter);
 
-    app.use('*/', function (req, res) {
-        res.sendFile(path.resolve('client/index.html'));
-    }); //this should take ambiguous routes to index.html
+    app.all('*', (req, res) => {
+        res.redirect('/');
+    });
 
     return app;
 };  

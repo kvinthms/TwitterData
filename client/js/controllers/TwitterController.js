@@ -32,13 +32,13 @@ angular.module('twitter').controller('TwitterController', ['$scope', 'Twitter', 
       }
       else{
         sessionStorage.setItem("place", userInput);
-        Twitter.getTrends(userInput).then(function (resp) {
+        Twitter.getTrends(userInput).then(function (response) {
           if (graphExists) {
             var tmpChart = chart;
             chart = null;
             tmpChart.destroy();
           }
-          $scope.listings = resp.data;
+          $scope.listings = response.data;
           if ($scope.listings == "Location Not Found.") {
             graphExists = false;
             document.getElementById('no-results').style.display = "block";
@@ -86,8 +86,8 @@ angular.module('twitter').controller('TwitterController', ['$scope', 'Twitter', 
             });
             graphExists = true;
           }
-        }, function (err){
-          console.log('Unable to get listings: ', err);
+        }, function (error){
+          console.log('Unable to get listings: ', error);
         });
       }
     };
