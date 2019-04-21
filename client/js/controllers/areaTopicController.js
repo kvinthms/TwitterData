@@ -119,7 +119,7 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
 
 			var ctx = document.getElementById('top-tweets').getContext('2d');
 			if(!barGraphTweets){
-				braGraphTweets = new Chart(ctx, {
+				barGraphTweets = new Chart(ctx, {
 					type: 'bar',
 					data: {
 						labels: labelName,
@@ -209,7 +209,12 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
 
 		$scope.lineFavorites = function(){
 			var yAxis = [], xAxis = [];
-			let filteredResult = responseData.filter(val => val.favorite_count !== 0).sort((a, b) => { return new Date(a.created_at) - new Date(b.created_at) })
+			//let filteredResult = responseData.filter(val => val.favorite_count !== 0).sort((a, b) => { return new Date(a.created_at) - new Date(b.created_at) })
+
+			var filteredResult = JSON.parse(JSON.stringify(responseData));
+			filteredResult.sort((a, b) => parseFloat(b.favorite_count) - parseFloat(a.favorite_count));
+			filteredResult.splice(10);
+			filteredResult.sort((a, b) => {return new Date(a.created_at) - new Date(b.created_at) });
 
 			for (let i=0; i<filteredResult.length; i++){
 				if(i==10){
@@ -217,6 +222,18 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
 				}
 				yAxis[i] = filteredResult[i].favorite_count;
 				let dateCreated = new Date(filteredResult[i].created_at);
+
+				if(dateCreated.getMinutes().toString().length == 1){
+					var hour = mod((dateCreated.getUTCHours()-7), 12);
+					if(hour == 0){
+						hour = 12;
+					}
+					var min = dateCreated.getMinutes().toString();
+					min = "0"+min;
+					parseInt(min, 10);
+					xAxis[i] = 
+				}
+
 				xAxis[i] = `${(dateCreated.getHours() % 12)}:${dateCreated.getMinutes()}:${dateCreated.getSeconds()} ${dateCreated.getHours() >= 12 ? "PM" : "AM"}`;
 			}
 
