@@ -1,5 +1,5 @@
-//define the module our app depends on here
+/* register the modules the application depends upon here*/
 angular.module('twitter', []);
 
-//init the app
-var app = angular.module('TwitterData', ['twitter']);
+/* register the application and inject all the necessary dependencies */
+var app = angular.module('tweetData', ['twitter']);

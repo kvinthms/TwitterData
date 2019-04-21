@@ -1,52 +1,51 @@
-angular.module('twitter').factory('Twitter', function($http){
-  
-  //methods contains all the methods for handling http requests we will need here
+angular.module('twitter').factory('Twitter', function ($http) {
   var methods = {
-    getAll: function(){
-      return $http.get('http://vast-scrubland-38554.herokuapp.com/api/twitter');
+    getAll: function () {
+      return $http.get('/api/twitter');
     },
 
-    //runs an http GET request on a place thru the API
-    getTrends: function(userPlace){
-      return $http.get('http://vast-scrubland-38554.herokuapp.com/api/twitter/'+userPlace);
+    getTrends: function (userPlace) {
+      console.log("got to factory with userPlace: " + userPlace);
+      return $http.get('/api/twitter/' + userPlace);
     },
 
-    //runs an http GET request on a topic based on location thru the API
     areaTopic: function (place, topic) {
+      console.log("Called on init");
       var isHash;
-      if (topic[0] == "#") { //looking for hashtag in string
-        topic = topic.substring(1); //taking out the hashtag
-        isHash = true; //boolean keeps track of what is hashtag
+      if (topic[0] == "#") {
+        topic = topic.substring(1, topic.length);
+        isHash = true;
       }
       else {
-        isHash = false; //boolean keeps track of what is hashtag
-      }
-      return $http.get('http://vast-scrubland-38554.herokuapp.com/api/twitter/topicByArea/' + place + '/' + topic + '/' + isHash);
-    },
-
-
-    //runs an http GET request on a topic thru the API
-    trendTopic: function(topic){
-      var isHash;
-      if(topic[0] == "#"){ //looking for hashtag at beginning of string
-        topic = topic.substring(1); //taking the hashtag out
-        isHash = true; //boolean to keep track of what's a hashtag
-      }
-      else{
         isHash = false;
       }
-      return $http.get('http://vast-scrubland-38554.herokuapp.com/api/twitter/trend/' + topic + '/' + isHash);
+      return $http.get('/api/twitter/topicByArea/' + place + '/' + topic + '/' + isHash);
     },
 
-    create: function(listing){
-      return $http.post('http://vast-scrubland-38554.herokuapp.com/api/listings', listing);
+    trendTopic: function(topic){
+      console.log("got to factory with topic: " + topic);
+      var isHash;
+      if (topic[0] == "#") {
+        topic = topic.substring(1, topic.length);
+        isHash = true;
+      }
+      else {
+        isHash = false;
+      }
+      return $http.get('/api/twitter/trend/'+topic+'/'+isHash);
     },
 
-    delete: function(id){
-      return $http.delete('http://vast-scrubland-38554.herokuapp.com/api/listings/' + id);
+    create: function (listing) {
+      return $http.post('/api/listings', listing);
+    },
+
+    delete: function (id) {
+      /**TODO
+         return result of HTTP delete method
+        */
+      return $http.delete('/api/listings/' + id);
     }
   };
 
-  //allowing methods to be used by the rest of the app
   return methods;
 });

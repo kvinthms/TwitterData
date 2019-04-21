@@ -1,37 +1,42 @@
-var path = require('path'),
-    express = require('express'),
+var path = require('path'),  
+    express = require('express'), 
     mongoose = require('mongoose'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     config = require('./config'),
     listingsRouter = require('../routes/listings.server.routes'),
-    twitterRouter = require('../routes/tweet.server.routes.js'),
-    cors = require(cors);
+    twitterRouter = require('../routes/twitter.server.routes.js'),
+    CORS = require('cors');
 
 module.exports.init = function() {
-    //connect to database
-    mongoose.connect(config.db.uri, {useMongoClient: true});
+  //connect to database
+  mongoose.connect(config.db.uri,{useMongoClient: true});
 
-    //initialize app
-    var app = express();
+  //initialize app
+  var app = express();
 
-    //enable request logging for development debugging
-    app.use(morgan('dev'));
+  //enable request logging for development debugging
+  app.use(morgan('dev'));
 
-    //body parsing middleware
-    app.use(bodyParser.json());
+  //body parsing middleware 
+  app.use(bodyParser.json());
 
-    app.use(cors());
+  app.use(CORS());
+  
+  /**TODO
+  Serve static files */
+  app.use('/', express.static(path.join(__dirname,'./../../client')));
+  /**TODO 
+  Use the listings router for requests to the api */
+  app.use('/api/listings',listingsRouter);
 
-    app.use('/', express.static(path.join(__dirname,'./../../client'))); //the argument for .static() might need changing
+  app.use('/api/twitter', twitterRouter)
 
-    app.use('/api/listings', listingsRouter);
+  /**TODO 
+  Go to homepage for all routes not specified */ 
+  app.all('*',(req,res)=>{
+    res.redirect('/');
+  });
 
-    app.use('/api/twitter', tweetRouter);
-
-    app.all('*', (req, res) => {
-        res.redirect('/');
-    });
-
-    return app;
+  return app;
 };  

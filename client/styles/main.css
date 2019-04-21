@@ -1,30 +1,9 @@
+body, html, container-fluid {
+  height: 100%;
+}
+
 #searchBar {
   margin: 15px 10px;
-}
-
-div {
-  animation: gator 10s infinite;
-}
-
-body{
-  color: grey;
-}
-
-@keyframes gator
-{
-  0%   {background: orange;}
-  50%  {background: blue;}
-  100%  {background: orange;}
-
-}
-
-tr:hover td {
-  background-color: white;
-}
-
-h1 {
-  color: black;
-  text-align: center;
 }
 
 .tableWrapper {
@@ -32,33 +11,85 @@ h1 {
   overflow: auto;
 }
 
-.table>tr:hover td {
-  background-color: black;
+.table-row {
+  cursor: pointer;
 }
 
-.table-striped>tbody>tr:nth-child(even)>td,
-.table-striped>tbody>tr:nth-child(even)>th {
-  background-color: blue;
-  color: white;
+.border {
+  border: 1px #337ab7;
+  border-style: solid;
 }
 
-.table-striped>tbody>tr:nth-child(odd)>td,
-.table-striped>tbody>tr:nth-child(odd)>th {
-  background-color: orange;
-  color: black;
+.bold {
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
-.table-hover{
-  background-color: black
-;
+.float-right {
+  float: right;
 }
 
-.button {
-  transition-duration: 0.4s;
-  color: black;
+.topmargin-lg {
+  margin-top: 30px;
 }
 
-.button:hover {
-  background-color: #4CAF50; /* Green */
-  color: white;
+.topmargin-sm{
+  margin-top:15px;
+}
+
+.delete-icon:hover {
+  color: #337ab7;
+}
+
+input:focus::placeholder {
+  color: #337ab7;
+}
+
+.navbar {
+  background-color: #e3f2fd;
+}
+
+.btn-group-toggle>label:hover {
+  cursor: pointer;
+}
+
+.logo {
+  height: 50px;
+  width: 96px;
+}
+
+.title {
+  display: inline;
+  font-size: 40px;
+}
+
+.topic-title>h2 {
+  margin-bottom: -20px;
+  /*padding-top: 0px;*/
+}
+
+.table-wrapper {
+  height: 200px;
+  overflow: auto;
+}
+
+.graph {
+  height: 400px;
+}
+
+.refine-area {
+  margin: 10px auto;
+}
+
+.inline{
+  display: inline;
+}
+
+.back-content{
+  font-size: 25px;
+}
+
+.back{
+  margin-top: 12%;
+  
 }

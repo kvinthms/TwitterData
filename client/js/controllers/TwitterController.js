@@ -3,16 +3,15 @@ angular.module('twitter').controller('TwitterController', ['$scope', 'Twitter', 
 
     sessionStorage.removeItem("topic");
     sessionStorage.removeItem("place");
-
+    $scope.loading = false;
     var graphExists = false;
     var chart;
     var searchNumber = false;
     var canvas = document.getElementById("test-chart");
-
     canvas.addEventListener('click', clickHndlr, false);
     function clickHndlr(event) {
       var selected = chart.getElementAtEvent(event);
-      if (selected.length == 0){
+      if (selected.length == 0) {
         console.log("clicked on unimportant area");
       }
       else {
@@ -22,7 +21,7 @@ angular.module('twitter').controller('TwitterController', ['$scope', 'Twitter', 
       }
     };
 
-    $scope.searchTrend = function(){
+    $scope.searchTrend = function () {
       var userInput = $scope.userPlace;
 
       if (!searchNumber) {
@@ -30,30 +29,37 @@ angular.module('twitter').controller('TwitterController', ['$scope', 'Twitter', 
         sessionStorage.removeItem("place");
         $window.location.href = "../../datapage_template.html";
       }
-      else{
+      else {
+        $scope.loading = true;
         sessionStorage.setItem("place", userInput);
         Twitter.getTrends(userInput).then(function (response) {
+          $scope.loading = false;
           if (graphExists) {
             var tmpChart = chart;
             chart = null;
             tmpChart.destroy();
           }
           $scope.listings = response.data;
-          if ($scope.listings == "Location Not Found.") {
+          if ($scope.listings == "Sorry, That location is either not trending or is not valid.") {
             graphExists = false;
             document.getElementById('no-results').style.display = "block";
           }
-          else{
+          else {
             document.getElementById('no-results').style.display = "none";
-            var labelName = [], 
-                labelPop = [];
-            for (var i=0; i<10; i++){
+            //console.log($scope.listings[0].trends[3]);
+            var labelName = [], labelPop = [];
+            for (var i = 0; i < 10; i++) {
               labelName[i] = $scope.listings[0].trends[i].name;
               labelPop[i] = $scope.listings[0].trends[i].tweet_volume;
             }
+            //console.log($scope.listings.length);
+            //console.log("Trends in " + $scope.listings[0].locations[0].name);
             var ctx = document.getElementById('test-chart').getContext('2d');
             chart = new Chart(ctx, {
+              // The type of chart we want to create
               type: 'bar',
+
+              // The data for our dataset
               data: {
                 labels: labelName,
                 datasets: [{
@@ -65,6 +71,7 @@ angular.module('twitter').controller('TwitterController', ['$scope', 'Twitter', 
                 }]
               },
 
+              // Configuration options go here
               options: {
                 scales: {
                   xAxes: [{
@@ -86,11 +93,14 @@ angular.module('twitter').controller('TwitterController', ['$scope', 'Twitter', 
             });
             graphExists = true;
           }
-        }, function (error){
-          console.log('Unable to get listings: ', error);
+        }, function (error) {
+          console.log('Unable to retrieve listings:', error);
         });
+
+
       }
     };
+
 
     let place = sessionStorage.getItem('place');
     if (place != null) {
