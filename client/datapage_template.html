@@ -56,19 +56,22 @@
         <div class="card topmargin-sm">
           <div class="card-body">
             <div style="display:inline-block;" class="card-title">
-              <h2><i class="fas fa-bullhorn"></i> Top Tweets</h2>
+              <h2><i class="fas fa-bullhorn"></i> Top 10 <em>{{topic}}</em> Tweets</h2>
             </div>
-            <div class="btn-group btn-group-toggle hide-btn float-right" data-toggle="buttons" style="display:inline-block;">
+            <div>
+              <h2 class="no-result" style="display: none"><i class="fab fa-twitter" style="transform:rotate(-180deg); color:rgba(0, 172, 238, 0.2); font-size:200px"></i></h2>
+              <canvas id="top-tweets"></canvas>
+            </div>
+            <div>
+              <h2> </h2>
+            </div>
+            <div class="btn-group btn-group-toggle hide-btn" data-toggle="buttons" style="margin-left:46%;">
               <label class="btn btn-outline-secondary active" ng-click="barTweetsFavorites()" data-toggle="tooltip" title="Sort by Favorites">
                 <input type="radio" name="graph-filter" id="likes-vs-tweet" autocomplete="off" checked><i class="fas fa-heart"></i>
               </label>
               <label class="btn btn-outline-secondary" ng-click="barTweetsRetweets()" data-toggle="tooltip" title="Sort by Retweets">
                 <input type="radio" name="graph-filter" id="retweets-vs-tweet" autocomplete="off"><i class="fas fa-retweet"></i>
               </label>
-            </div>
-            <div>
-              <h2 class="no-result" style="display: none"><i class="fab fa-twitter" style="transform:rotate(-180deg); color:rgba(0, 172, 238, 0.2); font-size:200px"></i></h2>
-              <canvas id="top-tweets"></canvas>
             </div>
           </div>
         </div>
@@ -77,17 +80,20 @@
             <div style="display:inline-block;" class="card-title">
               <h2><i class="fas fa-hourglass-half"></i> <em>{{topic}}</em> Tweets Chronology</h2>
             </div>
-            <div class="btn-group btn-group-toggle hide-btn float-right" data-toggle="buttons" style="display:inline-block;">
+            <div>
+              <h2 class="no-result" style="display: none"><i class="fab fa-twitter" style="transform:rotate(-180deg); color:rgba(0, 172, 238, 0.2); font-size:200px;"></i></h2>
+              <canvas id="line-graph"></canvas>
+            </div>
+            <div>
+              <h2> </h2>
+            </div>
+            <div class="btn-group btn-group-toggle hide-btn" data-toggle="buttons" style="margin-left: 48%">
               <label class="btn btn-outline-secondary active" ng-click="lineFavorites()" data-toggle="tooltip" title="Sort by Favorites">
                 <input type="radio" name="graph-filter" id="likes-vs-time" autocomplete="off" checked><i class="fas fa-heart"></i>
               </label>
               <label class="btn btn-outline-secondary" ng-click="lineRetweets()" data-toggle="tooltip" title="Sort by Retweets">
                 <input type="radio" name="graph-filter" id="retweets-vs-time" autocomplete="off"><i class="fas fa-retweet"></i>
               </label>
-            </div>
-            <div>
-              <h2 class="no-result" style="display: none"><i class="fab fa-twitter" style="transform:rotate(-180deg); color:rgba(0, 172, 238, 0.2); font-size:200px;"></i></h2>
-              <canvas id="line-graph"></canvas>
             </div>
           </div>
         </div>
@@ -96,9 +102,16 @@
         <div class="card topmargin-sm">
           <div class="card-body">
             <div style="display:inline-block;" class="card-title">
-              <h2><i class="fab fa-twitter"></i> #1 Tweet</h2>
+              <h2><i class="fab fa-twitter"></i> #1 <em>{{topic}}</em> Tweet</h2>
             </div>
-            <div class="btn-group btn-group-toggle hide-btn float-right" data-toggle="buttons" style="display:inline-block;">
+            <div>
+              <h2 class="no-result" style="display: none"><i class="fab fa-twitter" style="transform:rotate(-180deg); color:rgba(0, 172, 238, 0.2); font-size:200px"></i></h2>
+              <canvas id="top-tweets"></canvas>
+            </div>
+            <div>
+              <h2> </h2>
+            </div>
+            <div class="btn-group btn-group-toggle hide-btn" data-toggle="buttons" style="margin-left: 50%">
               <label class="btn btn-outline-secondary active" ng-click="barTweetsFavorites()" data-toggle="tooltip" title="Sort by Favorites">
                 <input type="radio" name="graph-filter" id="likes-vs-tweet" autocomplete="off" checked><i class="fas fa-heart"></i>
               </label>
@@ -106,28 +119,27 @@
                 <input type="radio" name="graph-filter" id="retweets-vs-tweet" autocomplete="off"><i class="fas fa-retweet"></i>
               </label>
             </div>
-            <div>
-              <h2 class="no-result" style="display: none"><i class="fab fa-twitter" style="transform:rotate(-180deg); color:rgba(0, 172, 238, 0.2); font-size:200px"></i></h2>
-              <canvas id="top-tweets"></canvas>
-            </div>
           </div>
         </div>
         <div class="card topmargin-lg">
           <div class="card-body">
             <div style="display:inline-block;" class="card-title">
-              <h2><i class="fas fa-crown"></i> Top Users</h2>
+              <h2><i class="fas fa-crown"></i> Top Users Tweeting About <em>{{topic}}</em></h2>
             </div>
-            <div class="btn-group btn-group-toggle hide-btn float-right" data-toggle="buttons" style="display:inline-block;">
+            <div>
+              <h2 class="no-result" style="display: none"><i class="fab fa-twitter" style="transform:rotate(-180deg); color:rgba(0, 172, 238, 0.2); font-size:200px"></i></h2>
+              <canvas id="top-users"></canvas>
+            </div>
+            <div>
+              <h2> </h2>
+            </div>
+            <div class="btn-group btn-group-toggle hide-btn" style="margin-left: 53%" data-toggle="buttons">
               <label class="btn btn-outline-secondary active" ng-click="barUsersFollowers()" data-toggle="tooltip" title="Sort by Followers">
                 <input type="radio" name="graph-filter" id="users-vs-followers" autocomplete="off" checked><i class="fas fa-user-friends"></i>
               </label>
               <label class="btn btn-outline-secondary" ng-click="barUsersTweets()" data-toggle="tooltip" title="Sort by Tweet Amount">
                 <input type="radio" name="graph-filter" id="users-vs-tweets" autocomplete="off"><i class="fas fa-comment-dots"></i>
               </label>
-            </div>
-            <div>
-              <h2 class="no-result" style="display: none"><i class="fab fa-twitter" style="transform:rotate(-180deg); color:rgba(0, 172, 238, 0.2); font-size:200px"></i></h2>
-              <canvas id="top-users"></canvas>
             </div>
           </div>
         </div>
