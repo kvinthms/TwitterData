@@ -29,11 +29,7 @@
     
     <!-- Topic Title -->
     <div class="row">
-      <div class="col-md-2">
-        <a class="btn btn-outline-primary back" href="index.html">
-          <i class="fas fa-search inline back-content"></i>
-          <span class="inline back-content">New Search</span>
-        </a>
+      <div class="col-md-1">
       </div>
       <div class="col-md-9">
         <div class="card align-items-center topmargin-sm side-fade">
@@ -46,7 +42,12 @@
           </div>
         </div>
       </div>
-
+      <div class="col-md-2">
+        <a class="btn btn-outline-primary back" href="index.html">
+          <i class="fas fa-search inline back-content"></i>
+          <span class="inline back-content">New Search</span>
+        </a>
+      </div>
     </div>
 
     <!-- Graphs -->
@@ -74,7 +75,7 @@
         <div class="card topmargin-lg">
           <div class="card-body">
             <div style="display:inline-block;" class="card-title">
-              <h2><i class="far fa-clock"></i> <em>{{topic}}</em> Tweets Chronology</h2>
+              <h2><i class="fas fa-hourglass-half"></i> <em>{{topic}}</em> Tweets Chronology</h2>
             </div>
             <div class="btn-group btn-group-toggle hide-btn float-right" data-toggle="buttons" style="display:inline-block;">
               <label class="btn btn-outline-secondary active" ng-click="lineFavorites()" data-toggle="tooltip" title="Sort by Favorites">
@@ -114,7 +115,7 @@
         <div class="card topmargin-lg">
           <div class="card-body">
             <div style="display:inline-block;" class="card-title">
-              <h2><i class="fas fa-users"></i> Top Users</h2>
+              <h2><i class="fas fa-crown"></i> Top Users</h2>
             </div>
             <div class="btn-group btn-group-toggle hide-btn float-right" data-toggle="buttons" style="display:inline-block;">
               <label class="btn btn-outline-secondary active" ng-click="barUsersFollowers()" data-toggle="tooltip" title="Sort by Followers">

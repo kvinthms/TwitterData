@@ -123,6 +123,12 @@ input:focus::placeholder {
 .indexbtn {
   border-color: white;
   background-color: rgba(255, 255, 255, 0.4);
+  color: rgb(105, 117, 126);
+}
+
+.submitbtn {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: rgb(105, 117, 126);;
 }
 
 .side-fade {

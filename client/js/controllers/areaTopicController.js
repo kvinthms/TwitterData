@@ -266,6 +266,34 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                     }
                     yAxis[i] = filteredResult[i].favorite_count;
                     let dateCreated = new Date(filteredResult[i].created_at);
+
+                    var day = dateCreated.getUTCDay();
+                    switch (day){
+                        case 0: 
+                            day = "Sunday";
+                            break;
+                        case 1: 
+                            day = "Monday";
+                            break;
+                        case 2:
+                            day = "Tuesday";
+                            break;
+                        case 3:
+                            day = "Wednesday";
+                            break;
+                        case 4:
+                            day = "Thursday";
+                            break;
+                        case 5:
+                            day = "Friday";
+                            break;
+                        case 6:
+                            day = "Saturday";
+                            break;
+                        default:
+                            day = "";
+                            break;
+                    }
                     
                     if(dateCreated.getMinutes().toString().length == 1){
                         // console.log("single digit min");
@@ -279,7 +307,7 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                         min = "0"+min;
                         parseInt(min, 10);
                         // console.log("min: " + min);
-                        xAxis[i] = `${hour}:${min} ${dateCreated.getUTCHours()-7 < 0 || dateCreated.getUTCHours()-7 >= 12  ? "PM" : "AM"}`;
+                        xAxis[i] = `${day} ${hour}:${min} ${dateCreated.getUTCHours()-7 < 0 || dateCreated.getUTCHours()-7 >= 12  ? "PM" : "AM"}`;
                     }
                     else{
                         // console.log("double digit min");
@@ -290,7 +318,7 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                         var min = dateCreated.getMinutes();
                         // console.log("hour: "+hour);
                         // console.log("min: "+min);
-                        xAxis[i] = `${hour}:${min} ${dateCreated.getUTCHours()-7 < 0 || dateCreated.getUTCHours()-7 >= 12  ? "PM" : "AM"}`;
+                        xAxis[i] = `${day} ${hour}:${min} ${dateCreated.getUTCHours()-7 < 0 || dateCreated.getUTCHours()-7 >= 12  ? "PM" : "AM"}`;
                     }
                  
                     //fill lineUrls array
@@ -330,9 +358,36 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                     yAxis[i] = filteredResult[i].retweet_count;
                     let dateCreated = new Date(filteredResult[i].created_at);
 
+                    var day = dateCreated.getUTCDay();
+                    switch (day){
+                        case 0: 
+                            day = "Sunday";
+                            break;
+                        case 1: 
+                            day = "Monday";
+                            break;
+                        case 2:
+                            day = "Tuesday";
+                            break;
+                        case 3:
+                            day = "Wednesday";
+                            break;
+                        case 4:
+                            day = "Thursday";
+                            break;
+                        case 5:
+                            day = "Friday";
+                            break;
+                        case 6:
+                            day = "Saturday";
+                            break;
+                        default:
+                            day = "";
+                            break;
+                    }
+
                     if(dateCreated.getMinutes().toString().length == 1){
                         // console.log("single digit min");
-
                         var hour = mod((dateCreated.getUTCHours()-7), 12);
                         if(hour == 0){ 
                             hour = 12;
@@ -342,7 +397,7 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                         min = "0"+min;
                         parseInt(min, 10);
                         // console.log("min: " + min);
-                        xAxis[i] = `${hour}:${min} ${dateCreated.getUTCHours()-7 < 0 || dateCreated.getUTCHours()-7 >= 12  ? "PM" : "AM"}`;
+                        xAxis[i] = `${day} ${hour}:${min} ${dateCreated.getUTCHours()-7 < 0 || dateCreated.getUTCHours()-7 >= 12  ? "PM" : "AM"}`;
                     }
                     else{
                         // console.log("double digit min");
@@ -353,7 +408,7 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                         var min = dateCreated.getMinutes();
                         // console.log("hour: "+hour);
                         // console.log("min: "+min);
-                        xAxis[i] = `${hour}:${min} ${dateCreated.getUTCHours()-7 < 0 || dateCreated.getUTCHours()-7 >= 12  ? "PM" : "AM"}`;
+                        xAxis[i] = `${day} ${hour}:${min} ${dateCreated.getUTCHours()-7 < 0 || dateCreated.getUTCHours()-7 >= 12  ? "PM" : "AM"}`;
                     }
                     
                     //fill lineUrls array

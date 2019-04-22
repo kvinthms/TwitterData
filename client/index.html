@@ -30,10 +30,10 @@
           <div class="input-group input-group-lg topmargin-lg">
             <div class="input-group-prepend">
               <div class="btn-group btn-group-toggle hide-btn" data-toggle="buttons">
-                <label class="btn btn-outline-secondary active indexbtn" ng-click="setSearch(false)" style="padding-top:11px;">
+                <label class="btn btn-outline-light active indexbtn" ng-click="setSearch(false)" style="padding-top:11px;" data-toggle="tooltip" title="Search for tweet information about a topic">
                   <input type="radio" name="topic-button" autocomplete="off" checked>Topic
                 </label>
-                <label class="btn btn-outline-secondary indexbtn" ng-click="setSearch(true)" style="padding-top:11px;">
+                <label class="btn btn-outline-light indexbtn" ng-click="setSearch(true)" style="padding-top:11px;" data-toggle="tooltip" title="Search for trending topics within an area">
                   <input type="radio" name="area-button" autocomplete="off">Area
                 </label>
               </div>
@@ -41,7 +41,7 @@
             <input placeholder="Keyword" type="text" class="form-control" ng-model="userPlace"
               ng-keyup="$event.keyCode == 13 ? searchTrend() : null">
             <div class="input-group-append">
-              <button ng-click="searchTrend()" class="btn btn-outline-secondary">See Trends</button>
+              <button ng-click="searchTrend()" class="btn btn-outline-light submitbtn">See Trends</button>
             </div>
           </div>
         </div>
@@ -93,3 +93,10 @@
 <script src="js/app.js"></script>
 <script src="js/controllers/TwitterController.js"></script>
 <script src="js/factories/TwitterFactory.js"></script>
+
+<!-- Allows Bootstrap Tooltips (Source: https://www.w3schools.com/bootstrap/bootstrap_tooltip.asp) -->
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip(); 
+});
+</script>
