@@ -52,7 +52,30 @@
 
     <!-- Graphs -->
     <div class="row">
-      <div class="col-md-6" style="margin-bottom:15px">
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-10" style="margin-bottom:15px">
+        <div class="card topmargin-sm">
+          <div class="card-body">
+            <div style="display:inline-block;" class="card-title">
+              <h2><i class="fab fa-twitter"></i> #1 <em>{{topic}}</em> Tweet</h2>
+            </div>
+            <div>
+              <h2> </h2>
+            </div>
+            <div>
+              <h2 class="no-result" style="display: none"><i class="fab fa-twitter" style="transform:rotate(-180deg); color:rgba(0, 172, 238, 0.2); font-size:200px"></i></h2>
+            </div>
+            <div class="btn-group btn-group-toggle hide-btn" data-toggle="buttons" style="margin-left: 50%">
+              <label class="btn btn-outline-secondary active" ng-click="showTopFavorite()" data-toggle="tooltip" title="Sort by Favorites">
+                <input type="radio" name="graph-filter" id="likes-vs-tweet" autocomplete="off" checked><i class="fas fa-heart"></i>
+              </label>
+              <label class="btn btn-outline-secondary" ng-click="showTopRetweet()" data-toggle="tooltip" title="Sort by Retweets">
+                <input type="radio" name="graph-filter" id="retweets-vs-tweet" autocomplete="off"><i class="fas fa-retweet"></i>
+              </label>
+            </div>
+          </div>
+        </div>
         <div class="card topmargin-sm">
           <div class="card-body">
             <div style="display:inline-block;" class="card-title">
@@ -97,30 +120,7 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-6" style="margin-bottom:8px">
-        <div class="card topmargin-sm">
-          <div class="card-body">
-            <div style="display:inline-block;" class="card-title">
-              <h2><i class="fab fa-twitter"></i> #1 <em>{{topic}}</em> Tweet</h2>
-            </div>
-            <div>
-              <h2 class="no-result" style="display: none"><i class="fab fa-twitter" style="transform:rotate(-180deg); color:rgba(0, 172, 238, 0.2); font-size:200px"></i></h2>
-              <canvas id="top-tweets"></canvas>
-            </div>
-            <div>
-              <h2> </h2>
-            </div>
-            <div class="btn-group btn-group-toggle hide-btn" data-toggle="buttons" style="margin-left: 50%">
-              <label class="btn btn-outline-secondary active" ng-click="barTweetsFavorites()" data-toggle="tooltip" title="Sort by Favorites">
-                <input type="radio" name="graph-filter" id="likes-vs-tweet" autocomplete="off" checked><i class="fas fa-heart"></i>
-              </label>
-              <label class="btn btn-outline-secondary" ng-click="barTweetsRetweets()" data-toggle="tooltip" title="Sort by Retweets">
-                <input type="radio" name="graph-filter" id="retweets-vs-tweet" autocomplete="off"><i class="fas fa-retweet"></i>
-              </label>
-            </div>
-          </div>
-        </div>
+      <div style="margin-bottom:8px">
         <div class="card topmargin-lg">
           <div class="card-body">
             <div style="display:inline-block;" class="card-title">

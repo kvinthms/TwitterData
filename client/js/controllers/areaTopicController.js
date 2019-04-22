@@ -618,6 +618,14 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
             }
         //}
         
+        $scope.showTopFavorite = function(){
+            
+        }
+
+        $scope.showTopRetweet = function(){
+            
+        }
+
         function favBarClick(){
             document.getElementById('top-tweets').addEventListener('click', function(event){
                 var selected = barGraphTweets.getElementAtEvent(event);
