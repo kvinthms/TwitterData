@@ -15,14 +15,14 @@
   <nav class="navbar shadow-sm navbar-light">
     <a class="navbar-brand" href="index.html">
 <!--       <img src="logo.png" class="logo" alt="Home"> -->
-      <h3 class="inline" style="color:rgba(0, 0, 0, 0.8);"><i class="fab fa-twitter" style="color:rgb(0, 172, 238);"></i> TweetData</h3>
+      <h3 class="inline shadowtext" style="color:white; font-weight:700;"><i class="fab fa-twitter" style="color:rgba(0, 172, 238);"></i> TwitterData <i class="fas fa-glasses" style="color:rgba(0, 172, 238);"></i></h3>
     </a>
 
     <div class="logout">
       <button class="btn btn-outline-secondary btn">Logout</button>
     </div>
   </nav>
-  <div class="container-fluid" ng-controller="TwitterController" style="background-color:rgba(0, 172, 238, 0.5); padding-bottom:460px">
+  <div class="container-fluid" ng-controller="TwitterController" style="background-image: linear-gradient(to bottom right, rgba(0, 172, 238, 0.5), white); padding-bottom:460px">
 
     <div class="row justify-content-center">
       <div class="col-8 align-items-center">
@@ -30,10 +30,10 @@
           <div class="input-group input-group-lg topmargin-lg">
             <div class="input-group-prepend">
               <div class="btn-group btn-group-toggle hide-btn" data-toggle="buttons">
-                <label class="btn btn-outline-secondary active" ng-click="setSearch(false)" style="padding-top:11px;">
+                <label class="btn btn-outline-secondary active indexbtn" ng-click="setSearch(false)" style="padding-top:11px;">
                   <input type="radio" name="topic-button" autocomplete="off" checked>Topic
                 </label>
-                <label class="btn btn-outline-secondary" ng-click="setSearch(true)" style="padding-top:11px;">
+                <label class="btn btn-outline-secondary indexbtn" ng-click="setSearch(true)" style="padding-top:11px;">
                   <input type="radio" name="area-button" autocomplete="off">Area
                 </label>
               </div>

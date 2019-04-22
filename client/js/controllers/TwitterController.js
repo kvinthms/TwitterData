@@ -63,9 +63,8 @@ angular.module('twitter').controller('TwitterController', ['$scope', 'Twitter', 
               data: {
                 labels: labelName,
                 datasets: [{
-                  label: 'Trending Topics in ' + $scope.listings[0].locations[0].name,
-                  backgroundColor: 'rgb(255, 99, 132)',
-                  borderColor: 'rgb(255, 99, 132)',
+                  backgroundColor: 'rgba(71,160,235,0.5)',
+                  borderColor: 'rgb(71, 160, 235)',
                   data: labelPop,
                   display: true
                 }]
@@ -78,23 +77,26 @@ angular.module('twitter').controller('TwitterController', ['$scope', 'Twitter', 
                     scaleLabel:
                     {
                       display: true,
-                      labelString: "Trends"
+                      labelString: "Topics"
                     }
                   }],
                   yAxes: [{
                     scaleLabel:
                     {
                       display: true,
-                      labelString: "Tweet Volume"
+                      labelString: "Tweets"
                     }
                   }]
+                },
+                legend: {
+                  display: false
                 }
               }
             });
             graphExists = true;
           }
         }, function (error) {
-          console.log('Unable to retrieve listings:', error);
+          console.log('Unable to retrieve listings: ', error);
         });
 
 

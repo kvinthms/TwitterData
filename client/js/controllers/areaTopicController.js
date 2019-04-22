@@ -28,7 +28,7 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                 responseData = response.data.statuses;
                 $scope.barTweetsFavorites();
                 favBarClick();
-                $scope.lineRetweets();
+                $scope.lineFavorites();
                 lineClick();
                 $scope.barUsersFollowers();
                 userBarClick();
@@ -53,7 +53,7 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                 responseData = response.data.statuses;
                 $scope.barTweetsFavorites();
                 favBarClick();
-                $scope.lineRetweets();
+                $scope.lineFavorites();
                 lineClick();
                 $scope.barUsersFollowers();
                 userBarClick();
@@ -144,15 +144,16 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                 if(!barGraphTweets){
                     barGraphTweets = new Chart(ctx, {
                         // The type of chart we want to create
-                        type: 'bar',
+                        type: 'horizontalBar',
 
                         // The data for our dataset
                         data: {
                             labels: labelName,
                             datasets: [{
-                                label: 'Favorites',
-                                backgroundColor: 'rgb(255, 99, 132)',
-                                borderColor: 'rgb(255, 99, 132)',
+                                label: 'Likes',
+                                backgroundColor: 'rgba(207,58,96,0.6)',
+                                borderColor: 'rgb(207, 58, 96)',
+                                borderWidth: 1,
                                 data: labelPop,
                                 display: true
                             }]
@@ -165,14 +166,14 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                                     scaleLabel:
                                     {
                                         display: true,
-                                        labelString: "Top Tweets"
+                                        labelString: "Popularity Rank"
                                     }
                                 }],
                                 yAxes: [{
                                     scaleLabel:
                                     {
                                         display: true,
-                                        labelString: "# of Favorites"
+                                        labelString: "Likes"
                                     }
                                 }]
                             },
@@ -187,10 +188,9 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                     barGraphTweets.data.datasets[0].data = labelPop;
                     barGraphTweets.data.labels = labelName;
                     barGraphTweets.options.scales.yAxes[0].scaleLabel.labelString = "# of Favorites"
-                    barGraphTweets.data.datasets[0].label = "Favorites";
 
-                    barGraphTweets.data.datasets[0].backgroundColor = 'rgb(255, 99, 132)';
-                    barGraphTweets.data.datasets[0].borderColor = 'rgb(255, 99, 132)';
+                    barGraphTweets.data.datasets[0].backgroundColor = 'rgba(207,58,96,0.6)';
+                    barGraphTweets.data.datasets[0].borderColor = 'rgb(207, 58, 96)';
                     barGraphTweets.update();
                 }
 
@@ -242,22 +242,21 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
 
                 barGraphTweets.data.datasets[0].data = labelPop;
                 barGraphTweets.data.labels = labelName;
-                barGraphTweets.options.scales.yAxes[0].scaleLabel.labelString = "# of Retweets"
-                barGraphTweets.data.datasets[0].label = "Retweets";
+                barGraphTweets.options.scales.yAxes[0].scaleLabel.labelString = "Retweets"
 
-                barGraphTweets.data.datasets[0].backgroundColor = 'rgb(66,192,251)';
-                barGraphTweets.data.datasets[0].borderColor = 'rgb(66,192,251)';
+                barGraphTweets.data.datasets[0].backgroundColor = 'rgba(71,160,235,0.5)';
+                barGraphTweets.data.datasets[0].borderColor = 'rgb(71, 160, 235)';
 
                 barGraphTweets.update();
 
             }
 
-            $scope.lineFavorites = function () {
+            $scope.lineRetweets = function () {
                 var yAxis = [], xAxis = [];
                 // let filteredResult = responseData.filter(val => val.favorite_count !== 0).sort((a, b) => { return new Date(a.created_at) - new Date(b.created_at) })
 
                 var filteredResult = JSON.parse(JSON.stringify(responseData));
-                filteredResult.sort((a, b) => parseFloat(b.favorite_count) - parseFloat(a.favorite_count));
+                filteredResult.sort((a, b) => parseFloat(b.retweet_count) - parseFloat(a.retweet_count));
                 filteredResult.splice(10);
                 filteredResult.sort((a, b) => { return new Date(a.created_at) - new Date(b.created_at) });
 
@@ -280,7 +279,7 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                         min = "0"+min;
                         parseInt(min, 10);
                         // console.log("min: " + min);
-                        xAxis[i] = `${hour}:${min}:${dateCreated.getSeconds()} ${dateCreated.getUTCHours()-7 < 0 || dateCreated.getUTCHours()-7 >= 12  ? "PM" : "AM"}`;
+                        xAxis[i] = `${hour}:${min} ${dateCreated.getUTCHours()-7 < 0 || dateCreated.getUTCHours()-7 >= 12  ? "PM" : "AM"}`;
                     }
                     else{
                         // console.log("double digit min");
@@ -291,7 +290,7 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                         var min = dateCreated.getMinutes();
                         // console.log("hour: "+hour);
                         // console.log("min: "+min);
-                        xAxis[i] = `${hour}:${min}:${dateCreated.getSeconds()} ${dateCreated.getUTCHours()-7 < 0 || dateCreated.getUTCHours()-7 >= 12  ? "PM" : "AM"}`;
+                        xAxis[i] = `${hour}:${min} ${dateCreated.getUTCHours()-7 < 0 || dateCreated.getUTCHours()-7 >= 12  ? "PM" : "AM"}`;
                     }
                  
                     //fill lineUrls array
@@ -300,15 +299,14 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                 console.log(filteredResult);
                 lineGraph.data.datasets[0].data = yAxis;
                 lineGraph.data.labels = xAxis;
-                lineGraph.options.scales.yAxes[0].scaleLabel.labelString = "# of Favorites"
-                lineGraph.data.datasets[0].label = "Favorites";
+                lineGraph.options.scales.yAxes[0].scaleLabel.labelString = "Retweets"
 
-                lineGraph.data.datasets[0].backgroundColor = 'rgb(255, 99, 132)';
-                lineGraph.data.datasets[0].borderColor = 'rgb(255, 99, 132)';
+                lineGraph.data.datasets[0].backgroundColor = 'rgba(71,160,235,0.5)';
+                lineGraph.data.datasets[0].borderColor = 'rgb(71,160,235)';
 
                 lineGraph.update();
             }
-            $scope.lineRetweets = function () {
+            $scope.lineFavorites = function () {
                 var ctx = $('#line-graph').get(0).getContext('2d');
                 let yAxis = [], xAxis = [];
                 // let filteredResult = responseData.filter(val => val.retweet_count !== 0).sort((a, b) => { return new Date(a.created_at) - new Date(b.created_at) });
@@ -316,7 +314,7 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                 var filteredResult = JSON.parse(JSON.stringify(responseData));
                 // console.log(filteredResult);
                 // console.log("sorting by rt: ");
-                filteredResult.sort((a, b) => parseFloat(b.retweet_count) - parseFloat(a.retweet_count));
+                filteredResult.sort((a, b) => parseFloat(b.favorite_count) - parseFloat(a.favorite_count));
                 // console.log(filteredResult);
                 filteredResult.splice(10);
                 // console.log("removed excess");
@@ -344,7 +342,7 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                         min = "0"+min;
                         parseInt(min, 10);
                         // console.log("min: " + min);
-                        xAxis[i] = `${hour}:${min}:${dateCreated.getSeconds()} ${dateCreated.getUTCHours()-7 < 0 || dateCreated.getUTCHours()-7 >= 12  ? "PM" : "AM"}`;
+                        xAxis[i] = `${hour}:${min} ${dateCreated.getUTCHours()-7 < 0 || dateCreated.getUTCHours()-7 >= 12  ? "PM" : "AM"}`;
                     }
                     else{
                         // console.log("double digit min");
@@ -355,7 +353,7 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                         var min = dateCreated.getMinutes();
                         // console.log("hour: "+hour);
                         // console.log("min: "+min);
-                        xAxis[i] = `${hour}:${min}:${dateCreated.getSeconds()} ${dateCreated.getUTCHours()-7 < 0 || dateCreated.getUTCHours()-7 >= 12  ? "PM" : "AM"}`;
+                        xAxis[i] = `${hour}:${min} ${dateCreated.getUTCHours()-7 < 0 || dateCreated.getUTCHours()-7 >= 12  ? "PM" : "AM"}`;
                     }
                     
                     //fill lineUrls array
@@ -369,8 +367,9 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                         data: {
                             labels: xAxis,
                             datasets: [{
-                                backgroundColor: 'rgb(66,192,251)',
-                                borderColor: 'rgb(66,192,251)',
+                                backgroundColor: 'rgba(207,58,96,0.5)',
+                                borderColor: 'rgb(207,58,96)',
+                                borderWidth: 1,
                                 data: yAxis,
                                 display: true
                             }]
@@ -380,31 +379,30 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                                 xAxes: [{
                                     scaleLabel: {
                                         display: true,
-                                        labelString: "Tweet Time (EST)"
+                                        labelString: "Time"
                                     }
                                 }],
                                 yAxes: [{
                                     scaleLabel: {
                                         display: true,
-                                        labelString: "# of Retweets"
+                                        labelString: "Likes"
                                     }
                                 }],
                             },
                             legend: {
                                 display: false
-                            }
-
+                            },
+                            pointHoverBorderColor: 'rgb(255,255,255)'
                         }
                     })
                 }
                 else {
                     lineGraph.data.datasets[0].data = yAxis;
                     lineGraph.data.labels = xAxis;
-                    lineGraph.options.scales.yAxes[0].scaleLabel.labelString = "# of Retweets"
-                    lineGraph.data.datasets[0].label = "Retweets";
+                    lineGraph.options.scales.yAxes[0].scaleLabel.labelString = "Likes"
 
-                    lineGraph.data.datasets[0].backgroundColor = 'rgb(66,192,251)';
-                    lineGraph.data.datasets[0].borderColor = 'rgb(66,192,251)';
+                    lineGraph.data.datasets[0].backgroundColor = 'rgba(207,58,96,0.5)';
+                    lineGraph.data.datasets[0].borderColor = 'rgb(207,58,96)';
 
                     lineGraph.update();
                 }
@@ -459,15 +457,15 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                 if(!barGraphUsers){
                     barGraphUsers = new Chart(ctx, {
                         // The type of chart we want to create
-                        type: 'bar',
+                        type: 'horizontalBar',
 
                         // The data for our dataset
                         data: {
                             labels: labelName,
                             datasets: [{
-                                label: 'Top Users by Followers',
-                                backgroundColor: 'rgb(255, 200, 57)',
-                                borderColor: 'rgb(255, 200, 57)',
+                                backgroundColor: 'rgba(105, 117, 126, 0.5)',
+                                borderColor: 'rgb(105,117,126)',
+                                borderWidth: 1,
                                 data: labelPop,
                                 display: true
                             }]
@@ -487,7 +485,7 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                                     scaleLabel:
                                     {
                                         display: true,
-                                        labelString: "# of Followers"
+                                        labelString: "Followers"
                                     }
                                 }]
                             },
@@ -501,11 +499,10 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                     // ??????
                     barGraphUsers.data.datasets[0].data = labelPop;
                     barGraphUsers.data.labels = labelName;
-                    barGraphUsers.options.scales.yAxes[0].scaleLabel.labelString = "# of Followers"
-                    barGraphUsers.data.datasets[0].label = "Top Users by Followers";
+                    barGraphUsers.options.scales.yAxes[0].scaleLabel.labelString = "Followers"
 
-                    barGraphUsers.data.datasets[0].backgroundColor = 'rgb(255, 200, 57)';
-                    barGraphUsers.data.datasets[0].borderColor = 'rgb(255, 200, 57)';
+                    barGraphUsers.data.datasets[0].backgroundColor = 'rgba(105, 117, 126, 0.5)';
+                    barGraphUsers.data.datasets[0].borderColor = 'rgb(105,117,126)';
 
                     barGraphUsers.update();
                 }
@@ -557,11 +554,10 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
 
                 barGraphUsers.data.datasets[0].data = labelPop;
                 barGraphUsers.data.labels = labelName;
-                barGraphUsers.options.scales.yAxes[0].scaleLabel.labelString = "# of Tweets"
-                barGraphUsers.data.datasets[0].label = "Top Users by Tweet Count";
+                barGraphUsers.options.scales.yAxes[0].scaleLabel.labelString = "Tweets"
 
-                barGraphUsers.data.datasets[0].backgroundColor = 'rgb(97, 52, 174)';
-                barGraphUsers.data.datasets[0].borderColor = 'rgb(97, 52, 174)';
+                barGraphUsers.data.datasets[0].backgroundColor = 'rgba(71,160,235,0.5)';
+                barGraphUsers.data.datasets[0].borderColor = 'rgb(71,160,235)';
 
                 barGraphUsers.update();
             }

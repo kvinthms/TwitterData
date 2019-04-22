@@ -14,16 +14,18 @@
 <body ng-app="tweetData">
   <nav class="navbar shadow-sm navbar-light">
     <a class="navbar-brand" href="index.html">
-      <h3 class="inline" style="color:rgba(0, 0, 0, 0.8);"><i class="fab fa-twitter" style="color:rgb(0, 172, 238);"></i> TweetData</h3>
+      <h3 class="inline shadowtext" style="color:white; font-weight:700;"><i class="fab fa-twitter" style="color:rgba(0, 172, 238);"></i> TwitterData <i class="fas fa-glasses" style="color:rgba(0, 172, 238);"></i></h3>
     </a>
     <div class="logout">
-      <button class="btn btn-outline-secondary">Logout</button>
+      <a href="login.html">
+        <button class="btn btn-outline-secondary">Logout</button>
+      </a>
     </div>
   </nav>
   <div style="background-color:gray;opacity:.3;z-index:999;height:100%;width:100%;position:absolute;" ng-if="loading">
   </div>
   <div class="spinner-border" ng-if="loading" style="position:absolute;left:47%;top:50%;width:90px;height:90px;z-index:9999"></div>
-  <div class="container-fluid" ng-controller="areaTopicController" style="background-color:rgba(0, 172, 238, 0.5);">
+  <div class="container-fluid" ng-controller="areaTopicController" style="background-image: linear-gradient(to bottom right, rgba(0, 172, 238, 0.5), white);">
     
     <!-- Topic Title -->
     <div class="row">
@@ -34,12 +36,12 @@
         </a>
       </div>
       <div class="col-md-9">
-        <div class="card align-items-center topmargin-sm">
+        <div class="card align-items-center topmargin-sm side-fade">
           <div class="card-body">
             <h2 class="no-result" style="display: none">No results found, try a different trend/location combination!
             </h2>
             <div class="yes-result align-items-center">
-              <h2>Showing Results For: <em>{{topic}}</em> <span ng-if="areaSearch">in {{place}}</span></h2>
+              <h2>Showing Results For: <em style="  color: rgba(105, 117, 126, 0.7);">{{topic}}</em> <span ng-if="areaSearch">in {{place}}</span></h2>
             </div>
           </div>
         </div>
@@ -72,14 +74,14 @@
         <div class="card topmargin-lg">
           <div class="card-body">
             <div style="display:inline-block;" class="card-title">
-              <h2>Tweets by the Hour <i class="far fa-clock"></i></h2>
+              <h2><i class="far fa-clock"></i> <em>{{topic}}</em> Tweets Chronology</h2>
             </div>
             <div class="btn-group btn-group-toggle hide-btn float-right" data-toggle="buttons" style="display:inline-block;">
-              <label class="btn btn-outline-secondary active" ng-click="lineRetweets()" data-toggle="tooltip" title="Sort by Retweets">
-                <input type="radio" name="graph-filter" id="retweets-vs-time" autocomplete="off" checked><i class="fas fa-retweet"></i>
+              <label class="btn btn-outline-secondary active" ng-click="lineFavorites()" data-toggle="tooltip" title="Sort by Favorites">
+                <input type="radio" name="graph-filter" id="likes-vs-time" autocomplete="off" checked><i class="fas fa-heart"></i>
               </label>
-              <label class="btn btn-outline-secondary" ng-click="lineFavorites()" data-toggle="tooltip" title="Sort by Favorites">
-                <input type="radio" name="graph-filter" id="likes-vs-time" autocomplete="off"><i class="fas fa-heart"></i>
+              <label class="btn btn-outline-secondary" ng-click="lineRetweets()" data-toggle="tooltip" title="Sort by Retweets">
+                <input type="radio" name="graph-filter" id="retweets-vs-time" autocomplete="off"><i class="fas fa-retweet"></i>
               </label>
             </div>
             <div>
@@ -112,7 +114,7 @@
         <div class="card topmargin-lg">
           <div class="card-body">
             <div style="display:inline-block;" class="card-title">
-              <h2>Top Users <i class="fas fa-users"></i></h2>
+              <h2><i class="fas fa-users"></i> Top Users</h2>
             </div>
             <div class="btn-group btn-group-toggle hide-btn float-right" data-toggle="buttons" style="display:inline-block;">
               <label class="btn btn-outline-secondary active" ng-click="barUsersFollowers()" data-toggle="tooltip" title="Sort by Followers">
