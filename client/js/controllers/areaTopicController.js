@@ -1,6 +1,5 @@
 angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter',
     ($scope, Twitter) => {
-
         var responseData, lineGraph, barGraphTweets, barGraphUsers = null;
         var barUrls = [];
         var lineUrls = [];
@@ -176,6 +175,9 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                                         labelString: "# of Favorites"
                                     }
                                 }]
+                            },
+                            legend: {
+                                display: false
                             }
                         }
                     });
@@ -367,7 +369,6 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                         data: {
                             labels: xAxis,
                             datasets: [{
-                                label: "Retweets",
                                 backgroundColor: 'rgb(66,192,251)',
                                 borderColor: 'rgb(66,192,251)',
                                 data: yAxis,
@@ -387,7 +388,10 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                                         display: true,
                                         labelString: "# of Retweets"
                                     }
-                                }]
+                                }],
+                            },
+                            legend: {
+                                display: false
                             }
 
                         }
@@ -486,6 +490,9 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                                         labelString: "# of Followers"
                                     }
                                 }]
+                            },
+                            legend: {
+                                display: false
                             }
                         }
                     });

@@ -1,5 +1,6 @@
 body, html, container-fluid {
   height: 100%;
+  font-family: 'Arimo', sans-serif;
 }
 
 #searchBar {
@@ -23,6 +24,16 @@ body, html, container-fluid {
 .bold {
   margin-bottom: 5px;
   font-weight: bold;
+}
+
+.card {
+  background-color:rgba(255, 255, 255, 0.4);
+  border-color: white;
+  box-shadow: 0px 0px 5px white;
+}
+
+.card-title{
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .float-right {
@@ -87,9 +98,28 @@ input:focus::placeholder {
 
 .back-content{
   font-size: 25px;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: 'Arimo', sans-serif;
+  font-size: 22px;
 }
 
 .back{
-  margin-top: 12%;
-  
+  margin-top: 35px;
+  margin-left: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-color: white;
 }
+
+.back:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: white;
+}
+
+.yes-result {
+  padding-top: 5px;
+  color:rgba(0, 0, 0, 0.7);
+}
+
+
+
+
