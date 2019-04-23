@@ -17,7 +17,7 @@ var NodeGeocoder = require('node-geocoder');
 var options = {
     provider: 'opencage',
     httpAdapter: 'https',
-    apiKey: 'AIzaSyDLV-_01R5Xdn00IuyLpJdG_1nnkqTyq2c',
+    apiKey: 'c0ed9858330c48d7be89571e65adadcc',
     formatter: null
 };
 
@@ -116,6 +116,8 @@ exports.dynamicTrends = function (req, res, next) {
 
 function getCoord(place) {
     let promise = new Promise(function (resolve, reject) {
+        //checkValidArea(place).then(woeid => {
+
         geocoder.geocode(place, function (error, response) {
             console.log("getting coords");
             if (error) {
@@ -146,7 +148,7 @@ exports.areaTopicTweets = function (req, res, next) {
     if(isHash === "true"){
         topic = "#" + topic;
     }
-
+    console.log(place);
     getCoord(place).then(function(coord){
         // console.log("got coords: " + coord.latitude + ", " + coord.longitude);
         var searchLocation = coord.latitude+','+coord.longitude+',10mi';
