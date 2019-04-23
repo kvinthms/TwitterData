@@ -35,16 +35,17 @@ function checkValidArea(userInput) {
                 reject(error);
                 throw error;
             }
+            userInput = userInput.charAt(0).toUpperCase() + userInput.substring(1).toLowerCase();
             for (let i = 0; i < response.length; i++) {
                 if (response[i].name == userInput) {
                     console.log("found woeid is: " + response[i].woeid);
                     resolve(response[i].woeid);
                 }
-            };
+            }
             resolve(-1);
         });
 
-    })
+    });
     return promise;
 }
 

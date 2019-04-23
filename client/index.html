@@ -12,10 +12,10 @@
 </head>
 
 <body ng-app="tweetData">
-  <nav class="navbar shadow-sm navbar-light">
+  <nav class="navbar shadow-sm navbar-dark bg-dark">
     <a class="navbar-brand" href="index.html">
 <!--       <img src="logo.png" class="logo" alt="Home"> -->
-      <h3 class="inline shadowtext" style="color:white; font-weight:700;"><i class="fab fa-twitter" style="color:rgba(0, 172, 238);"></i> TwitterData <i class="fas fa-glasses" style="color:rgba(0, 172, 238);"></i></h3>
+      <h3 class="inline shadowtext" style="color:white; font-weight:700;"><i class="fab fa-twitter" style="color:rgba(0, 172, 238);"></i> TwitterEdge <i class="fas fa-glasses" style="color:rgba(0, 172, 238);"></i></h3>
     </a>
 
     <div class="logout">
@@ -41,7 +41,7 @@
             <input placeholder="Keyword" type="text" class="form-control" ng-model="userPlace"
               ng-keyup="$event.keyCode == 13 ? searchTrend() : null">
             <div class="input-group-append">
-              <button ng-click="searchTrend()" class="btn btn-outline-light submitbtn">See Trends</button>
+              <button ng-click="searchTrend()" class="btn btn-outline-light submitbtn">Search</button>
             </div>
           </div>
         </div>
