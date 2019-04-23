@@ -116,8 +116,6 @@ exports.dynamicTrends = function (req, res, next) {
 
 function getCoord(place) {
     let promise = new Promise(function (resolve, reject) {
-        //checkValidArea(place).then(woeid => {
-
         geocoder.geocode(place, function (error, response) {
             console.log("getting coords");
             if (error) {

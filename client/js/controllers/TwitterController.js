@@ -17,7 +17,7 @@ angular.module('twitter').controller('TwitterController', ['$scope', 'Twitter', 
       else {
         console.log("trend is " + selected[0]._model.label);
         sessionStorage.setItem("topic", selected[0]._model.label);
-        $window.location.href = '../../datapage_template.html';
+        $window.location.href = '../../topic.html';
       }
     };
 
@@ -27,7 +27,7 @@ angular.module('twitter').controller('TwitterController', ['$scope', 'Twitter', 
       if (!searchNumber) {
         sessionStorage.setItem("topic", userInput);
         sessionStorage.removeItem("place");
-        $window.location.href = "../../datapage_template.html";
+        $window.location.href = "../../topic.html";
       }
       else {
         $scope.loading = true;

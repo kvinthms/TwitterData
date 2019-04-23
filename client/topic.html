@@ -57,40 +57,7 @@
       <div class="col-md-1">
       </div>
       <div class="col-md-10" style="margin-bottom:15px">
-        <div class="card topmargin-sm">
-          <div class="card-body">
-            <div style="display:inline-block;" class="card-title">
-              <h2><i class="fab fa-twitter"></i></h2>
-            </div>
-            <div class="cardtitletext" style="display:inline-block; margin-left:39%">
-              <h2><em>{{topic}}</em> Tweets</h2></h2>
-            </div>
-            <div>
-              <h2> </h2>
-            </div>
-            <div>
-              <h2 class="no-result" style="display: none"><i class="fab fa-twitter" style="transform:rotate(-180deg); color:rgba(0, 172, 238, 0.2); font-size:200px"></i></h2>
-              <div ng-repeat="x in tweetss">
-<!--                 <a href={{picURL}} target="_blank"> -->
-                  <img src={{x.user.profile_image_url_https}} alt="profile-pic" id="profile-pic">
-<!--                 </a> -->
-<!--                 <a href={{x.}} target="_blank"> -->
-                  <h2>{{x.user.name}}</h2>
-                  <p>{{x.user.screen_name}}</p>
-<!--                 </a> -->
-                <h3>{{x.text}}</h3>
-              </div>
-            </div>
-            <div class="btn-group btn-group-toggle hide-btn" data-toggle="buttons" style="margin-left: 50%">
-              <label class="btn btn-outline-secondary active" ng-click="showTopFavorite()" data-toggle="tooltip" title="Sort by Favorites">
-                <input type="radio" name="graph-filter" id="likes-vs-tweet" autocomplete="off" checked><i class="fas fa-heart"></i>
-              </label>
-              <label class="btn btn-outline-secondary" ng-click="showTopRetweet()" data-toggle="tooltip" title="Sort by Retweets">
-                <input type="radio" name="graph-filter" id="retweets-vs-tweet" autocomplete="off"><i class="fas fa-retweet"></i>
-              </label>
-            </div>
-          </div>
-        </div>
+
         <div class="card topmargin-sm">
           <div class="card-body">
             <div style="display:inline-block;" class="card-title">
@@ -116,6 +83,52 @@
             </div>
           </div>
         </div>
+
+        <div class="card topmargin-sm">
+          <div class="card-body">
+            <div style="display:inline-block;" class="card-title">
+              <h2><i class="fab fa-twitter"></i></h2>
+            </div>
+            <div class="cardtitletext" style="display:inline-block; margin-left:39%">
+              <h2><em>{{topic}}</em> Tweets</h2></h2>
+            </div>
+            <div>
+              <h2> </h2>
+            </div>
+            <div>
+              <h2 class="no-result" style="display: none"><i class="fab fa-twitter" style="transform:rotate(-180deg); color:rgba(0, 172, 238, 0.2); font-size:200px"></i></h2>
+              <div ng-repeat="x in tweetss">
+                <a href={{x.entities.urls[0].url}}>
+                  <!--                 <a href={{picURL}} target="_blank"> -->
+                  <img src={{x.user.profile_image_url_https}} alt="profile-pic" id="profile-pic" style="float: left; margin-right: 10px; margin-bottom: 0px">
+                  <!--                 </a> -->
+                  <!--                 <a href={{x.}} target="_blank"> -->
+                  <h4 style="margin-bottom: 0px;"><a href={{x.entities.urls[0].url}}>{{x.user.name}}</a></h4>
+                  <p style="margin-bottom: 0px;"><a href={{x.entities.urls[0].url}}>@{{x.user.screen_name}}</a></p>
+                  <!--                 </a> -->
+                  <h3 style="margin-bottom: 0px;"><a href="{{x.entities.urls[0].url}}">{{x.text}}</a></h3>
+                  <h4 style="margin-bottom: 20px;">
+                    <img src="https://ton.twimg.com/stickers/stickers/11094_raw.png" alt="Likes: " style="width:25px; height: 25px">
+                    {{x.favorite_count}}
+                    <img src="http://simpleicon.com/wp-content/uploads/retweet.png" alt="Likes: " style="width:35px; height: 35px">
+                    {{x.retweet_count}}
+                  </h4>
+                </a>
+              </div>
+            </div>
+            <!--
+            <div class="btn-group btn-group-toggle hide-btn" data-toggle="buttons" style="margin-left: 50%">
+              <label class="btn btn-outline-secondary active" ng-click="showTopFavorite()" data-toggle="tooltip" title="Sort by Favorites">
+                <input type="radio" name="graph-filter" id="likes-vs-tweet" autocomplete="off" checked><i class="fas fa-heart"></i>
+              </label>
+              <label class="btn btn-outline-secondary" ng-click="showTopRetweet()" data-toggle="tooltip" title="Sort by Retweets">
+                <input type="radio" name="graph-filter" id="retweets-vs-tweet" autocomplete="off"><i class="fas fa-retweet"></i>
+              </label>
+            </div>
+            -->
+          </div>
+        </div>
+
         <div class="card topmargin-lg">
           <div class="card-body">
             <div style="display:inline-block;" class="card-title">
