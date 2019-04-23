@@ -1,79 +1,124 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Arimo"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles/main.css">
-  <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
-</head>
+  <body ng-app="tweetData">
+    <nav class="navbar shadow-sm navbar-dark bg-dark">
+      <a class="navbar-brand" href="index.html">
+        <!--       <img src="logo.png" class="logo" alt="Home"> -->
+        <h3 class="inline shadowtext" style="color:white; font-weight:700;">
+          <i class="fab fa-twitter" style="color:rgba(0, 172, 238);"></i>
+          TwitterEdge
+          <i class="fas fa-glasses" style="color:rgba(0, 172, 238);"></i>
+        </h3>
+      </a>
 
-<body ng-app="tweetData">
-  <nav class="navbar shadow-sm navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.html">
-<!--       <img src="logo.png" class="logo" alt="Home"> -->
-      <h3 class="inline shadowtext" style="color:white; font-weight:700;"><i class="fab fa-twitter" style="color:rgba(0, 172, 238);"></i> TwitterEdge <i class="fas fa-glasses" style="color:rgba(0, 172, 238);"></i></h3>
-    </a>
-
-    <div class="logout">
-      <button class="btn btn-outline-secondary btn">Logout</button>
-    </div>
-  </nav>
-  <div class="container-fluid" ng-controller="TwitterController" style="background-image: linear-gradient(to bottom right, rgba(0, 172, 238, 0.5), white); padding-bottom:460px">
-
-    <div class="row justify-content-center">
-      <div class="col-8 align-items-center">
-        <div class="row align-items-center">
-          <div class="input-group input-group-lg topmargin-lg">
-            <div class="input-group-prepend">
-              <div class="btn-group btn-group-toggle hide-btn" data-toggle="buttons">
-                <label class="btn btn-outline-light active indexbtn" ng-click="setSearch(false)" style="padding-top:11px;" data-toggle="tooltip" title="Search for tweet information about a topic">
-                  <input type="radio" name="topic-button" autocomplete="off" checked>Topic
-                </label>
-                <label class="btn btn-outline-light indexbtn" ng-click="setSearch(true)" style="padding-top:11px;" data-toggle="tooltip" title="Search for trending topics within an area">
-                  <input type="radio" name="area-button" autocomplete="off">Area
-                </label>
+      <div class="logout">
+        <button class="btn btn-outline-secondary btn">Logout</button>
+      </div>
+    </nav>
+    <div
+      class="container-fluid"
+      ng-controller="TwitterController"
+      style="background-image: linear-gradient(to bottom right, rgba(0, 172, 238, 0.5), white); padding-bottom:460px"
+    >
+      <div class="row justify-content-center">
+        <div class="col-8 align-items-center">
+          <div class="row align-items-center">
+            <div class="input-group input-group-lg topmargin-lg">
+              <div class="input-group-prepend">
+                <div
+                  class="btn-group btn-group-toggle hide-btn"
+                  data-toggle="buttons"
+                >
+                  <label
+                    class="btn btn-outline-light active indexbtn"
+                    ng-click="setSearch(false)"
+                    style="padding-top:11px;"
+                    data-toggle="tooltip"
+                    title="Search for tweet information about a topic"
+                  >
+                    <input
+                      type="radio"
+                      name="topic-button"
+                      autocomplete="off"
+                      checked
+                    />Topic
+                  </label>
+                  <label
+                    class="btn btn-outline-light indexbtn"
+                    ng-click="setSearch(true)"
+                    style="padding-top:11px;"
+                    data-toggle="tooltip"
+                    title="Search for trending topics within an area"
+                  >
+                    <input
+                      type="radio"
+                      name="area-button"
+                      autocomplete="off"
+                    />Area
+                  </label>
+                </div>
               </div>
-            </div>
-            <input placeholder="Keyword" type="text" class="form-control" ng-model="userPlace"
-              ng-keyup="$event.keyCode == 13 ? searchTrend() : null">
-            <div class="input-group-append">
-              <button ng-click="searchTrend()" class="btn btn-outline-light submitbtn">Search</button>
+              <input
+                placeholder="Keyword"
+                type="text"
+                class="form-control"
+                ng-model="userPlace"
+                ng-keyup="$event.keyCode == 13 ? trendSearch() : null"
+              />
+              <div class="input-group-append">
+                <button
+                  ng-click="trendSearch()"
+                  class="btn btn-outline-light submitbtn"
+                >
+                  Search
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="spinner-border" ng-if="loading"
-        style="position:absolute;left:47%;top:50%;width:90px;height:90px;z-index:9999"></div>
-      <div class="col-8 topmargin-lg">
-        <canvas id="test-chart"></canvas>
-        <div id="no-results" style="display: none">
-          <i class="far fa-frown-open" style="font-size:100px;"></i>
-          <h1>Sorry,</h1>
-          <h2>There are no trending topics for this area...</h2>
-          <h3>Please refine your search, or try somewhere new!</h3>
+      <div class="row justify-content-center">
+        <div
+          class="spinner-border"
+          ng-if="loading"
+          style="position:absolute;left:47%;top:50%;width:90px;height:90px;z-index:9999"
+        ></div>
+        <div class="col-8 topmargin-lg">
+          <canvas id="test-chart"></canvas>
+          <div id="no-results" style="display: none">
+            <i class="far fa-frown-open" style="font-size:100px;"></i>
+            <h1>Sorry,</h1>
+            <h2>There are no trending topics for this area...</h2>
+            <h3>Please refine your search, or try somewhere new!</h3>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  </div>
-
-
-
-
-
-</body>
-
+  </body>
 </html>
 
 <!-- Angular -->
 <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
-
 
 <!-- Bootstrap -->
 <!-- Latest compiled and minified CSS -->
@@ -83,8 +128,6 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-
 
 <!-- Charts.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
@@ -96,7 +139,7 @@
 
 <!-- Allows Bootstrap Tooltips (Source: https://www.w3schools.com/bootstrap/bootstrap_tooltip.asp) -->
 <script>
-$(document).ready(function(){
-  $('[data-toggle="tooltip"]').tooltip(); 
-});
+  $(document).ready(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
 </script>

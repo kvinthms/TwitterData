@@ -1,49 +1,49 @@
-angular.module('twitter').factory('Twitter', function ($http) {
+angular.module("twitter").factory("Twitter", function($http) {
   var methods = {
-    getAll: function () {
-      return $http.get('/api/twitter');
+    getAll: function() {
+      return $http.get("/api/twitter");
     },
 
-    getTrends: function (userPlace) {
+    getTrends: function(userPlace) {
       console.log("got to factory with userPlace: " + userPlace);
-      return $http.get('/api/twitter/' + userPlace);
+      return $http.get("/api/twitter/" + userPlace);
     },
 
-    areaTopic: function (place, topic) {
+    areaTopic: function(spotData, topic) {
       console.log("Called on init");
-      var isHash;
+      var hashCheck;
       if (topic[0] == "#") {
         topic = topic.substring(1, topic.length);
-        isHash = true;
+        hashCheck = true;
+      } else {
+        hashCheck = false;
       }
-      else {
-        isHash = false;
-      }
-      return $http.get('/api/twitter/topicByArea/' + place + '/' + topic + '/' + isHash);
+      return $http.get(
+        "/api/twitter/topicByArea/" + spotData + "/" + topic + "/" + hashCheck
+      );
     },
 
-    trendTopic: function(topic){
+    trendTopic: function(topic) {
       console.log("got to factory with topic: " + topic);
-      var isHash;
+      var hashCheck;
       if (topic[0] == "#") {
         topic = topic.substring(1, topic.length);
-        isHash = true;
+        hashCheck = true;
+      } else {
+        hashCheck = false;
       }
-      else {
-        isHash = false;
-      }
-      return $http.get('/api/twitter/trend/'+topic+'/'+isHash);
+      return $http.get("/api/twitter/trend/" + topic + "/" + hashCheck);
     },
 
-    create: function (listing) {
-      return $http.post('/api/listings', listing);
+    create: function(listing) {
+      return $http.post("/api/listings", listing);
     },
 
-    delete: function (id) {
+    delete: function(id) {
       /**TODO
          return result of HTTP delete method
         */
-      return $http.delete('/api/listings/' + id);
+      return $http.delete("/api/listings/" + id);
     }
   };
 

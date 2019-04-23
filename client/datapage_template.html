@@ -37,7 +37,7 @@
             <h2 class="no-result" style="display: none">No results found, try a different trend/location combination!
             </h2>
             <div class="yes-result align-items-center">
-              <h2>Showing Results For: <em style="  color: rgba(105, 117, 126, 0.7);">{{topic}}</em> <span ng-if="areaSearch">in {{place}}</span></h2>
+              <h2>Showing Results For: <em style="  color: rgba(105, 117, 126, 0.7);">{{topic}}</em> <span ng-if="areaSearch">in {{spotData}}</span></h2>
             </div>
           </div>
         </div>
@@ -107,7 +107,7 @@
               <h2> </h2>
             </div>
             <div class="btn-group btn-group-toggle hide-btn" data-toggle="buttons" style="margin-left:46%;">
-              <label class="btn btn-outline-secondary active" ng-click="barTweetsFavorites()" data-toggle="tooltip" title="Sort by Favorites">
+              <label class="btn btn-outline-secondary active" ng-click="barFavoriteResult()" data-toggle="tooltip" title="Sort by Favorites">
                 <input type="radio" name="graph-filter" id="likes-vs-tweet" autocomplete="off" checked><i class="fas fa-heart"></i>
               </label>
               <label class="btn btn-outline-secondary" ng-click="barTweetsRetweets()" data-toggle="tooltip" title="Sort by Retweets">
@@ -158,7 +158,7 @@
               <h2> </h2>
             </div>
             <div class="btn-group btn-group-toggle hide-btn" style="margin-left: 53%" data-toggle="buttons">
-              <label class="btn btn-outline-secondary active" ng-click="barUsersFollowers()" data-toggle="tooltip" title="Sort by Followers">
+              <label class="btn btn-outline-secondary active" ng-click="barFollowCount()" data-toggle="tooltip" title="Sort by Followers">
                 <input type="radio" name="graph-filter" id="users-vs-followers" autocomplete="off" checked><i class="fas fa-user-friends"></i>
               </label>
               <label class="btn btn-outline-secondary" ng-click="barUsersTweets()" data-toggle="tooltip" title="Sort by Tweet Amount">

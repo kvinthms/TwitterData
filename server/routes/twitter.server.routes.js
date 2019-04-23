@@ -5,14 +5,14 @@ var twitter = require('../controllers/twitter.server.controller.js'),
 router.route('/')
     .get(twitter.test);
 
-router.route('/topicByArea/:place/:topic/:isHash')
-	.get(twitter.areaTopicTweets);
+router.route('/topicByArea/:spotData/:topic/:hashCheck')
+	.get(twitter.geoTopics);
 
-router.route('/trend/:topic/:isHash')
-	.get(twitter.topicTweets);
+router.route('/trend/:topic/:hashCheck')
+	.get(twitter.tweetTopics);
 
 router.route('/:userPlace')
-	.get(twitter.dynamicTrends);
+	.get(twitter.liveTrends);
 
 
 

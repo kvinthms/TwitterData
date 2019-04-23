@@ -9,31 +9,30 @@ var path = require('path'),
     CORS = require('cors');
 
 module.exports.init = function() {
-  //connect to database
+  //Following old Bootcamp procedure, straightforward
+
+  //Connect to DB
   mongoose.connect(config.db.uri,{useMongoClient: true});
 
-  //initialize app
+  // Initialize the express app
   var app = express();
 
-  //enable request logging for development debugging
+  // use morgan to log HTTP requests
   app.use(morgan('dev'));
 
-  //body parsing middleware 
+  //Body parsing to make our jobs easier. 
   app.use(bodyParser.json());
 
   app.use(CORS());
   
-  /**TODO
-  Serve static files */
+  // Base route
   app.use('/', express.static(path.join(__dirname,'./../../client')));
-  /**TODO 
-  Use the listings router for requests to the api */
+  //Route listings
   app.use('/api/listings',listingsRouter);
-
+  //Route twitter calls
   app.use('/api/twitter', twitterRouter)
 
-  /**TODO 
-  Go to homepage for all routes not specified */ 
+  //Handle everything else 
   app.all('*',(req,res)=>{
     res.redirect('/');
   });
