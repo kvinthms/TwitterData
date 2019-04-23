@@ -11,7 +11,7 @@ angular.module('twitter').factory('Twitter', function ($http) {
 
             console.log('Login for: ' + logInfo.user + ' w/ pwd: ' + logInfo.hpass);
 
-            return $http.post('/auth/login/', logInfo).success(function () {
+            return $http.post('https://vast-scrubland-38554.herokuapp.com/auth/login/', logInfo).success(function () {
 
                 console.log('Login success');
                 window.location.href = '/search';
@@ -30,7 +30,7 @@ angular.module('twitter').factory('Twitter', function ($http) {
             console.log('Register for: ' + logInfo.user + ' and hash: ' + logInfo.hpass);
 
             //another attempt
-            return $http.post('/auth/register/', logInfo);
+            return $http.post('https://vast-scrubland-38554.herokuapp.com/auth/register/', logInfo);
         },
 
     };
