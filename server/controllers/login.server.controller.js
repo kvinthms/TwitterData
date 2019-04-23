@@ -2,6 +2,9 @@ var Login = require('../models/login.server.model.js');
 
 module.exports.register = function (req, res) {
 
+    console.log('\nPerforming registration for: \n');
+    console.log(req.body);
+
     res.setHeader('content-type', 'text/html');
 
     var user = new  Login();

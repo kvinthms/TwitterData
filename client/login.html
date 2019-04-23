@@ -29,6 +29,7 @@
 </head>
 <body ng-app="tweetData">
 
+<!--
 	<div ng-controller="loginController">
 		<div class="row">
 			<div class="col-md-3">
@@ -38,6 +39,40 @@
 			</div>
 		</div>
 	</div>
+-->
+
+<form>
+	<div class="form-group md-2">
+		<input class="login-input form-control form-control-lg" placeholder="Username"
+			   ng-model="login.user" type="text">
+	</div>
+	<div class="form-group">
+		<input class="login-input form-control form-control-lg" placeholder="Password"
+			   ng-model="login.pwd" type="password">
+	</div>
+	<a href="" ng-click="flip()" class="login-href rotate-btn">
+		Need an account?
+	</a>
+	<button type="button" style="float: right" class="btn btn-lg btn-primary top-margin"
+			ng-click="login()" id="login-button">Log in</button>
+</form>
+
+	<form>
+		<div class="form-group md-2">
+			<input class="login-input form-control form-control-lg" placeholder="Username"
+				   ng-model="signup.user" type="text">
+		</div>
+		<div class="form-group md-2">
+			<input class="login-input form-control form-control-lg" placeholder="Password"
+				   ng-model="signup.pwd" type="password">
+		</div>
+		<a href="" ng-click="flip()" class="login-href rotate-btn">
+			Back to login?
+		</a>
+		<br>
+		<button type="button" style="float: right" class="btn btn-lg btn-primary top-margin"
+				ng-click="signup()" id="signup-button">Sign up</button>
+	</form>
 
 </body>
 </html>
@@ -62,5 +97,5 @@
 
 <!-- Our Logic -->
 <script src="js/app.js"></script>
-<script src="js/controllers/TwitterController.js"></script>
-<script src="js/factories/TwitterFactory.js"></script>
+<script src="js/controllers/loginController.js"></script>
+<script src="js/factories/loginFactory.js"></script>
