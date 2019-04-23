@@ -7,6 +7,10 @@ body, html, container-fluid {
   margin: 15px 10px;
 }
 
+.cardtitletext{
+  color: rgba(0, 0, 0, 0.5);
+}
+
 .tableWrapper {
   max-height: 400px;
   overflow: auto;
@@ -141,7 +145,6 @@ input:focus::placeholder {
 .shadowtext{
   text-shadow: 0px 0px 8px rgb(0, 172, 238);
 }
-
 
 
 

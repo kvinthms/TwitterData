@@ -187,7 +187,7 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                     // ??????
                     barGraphTweets.data.datasets[0].data = labelPop;
                     barGraphTweets.data.labels = labelName;
-                    barGraphTweets.options.scales.yAxes[0].scaleLabel.labelString = "# of Favorites"
+                    barGraphTweets.options.scales.yAxes[0].scaleLabel.labelString = "Likes"
 
                     barGraphTweets.data.datasets[0].backgroundColor = 'rgba(207,58,96,0.6)';
                     barGraphTweets.data.datasets[0].borderColor = 'rgb(207, 58, 96)';
@@ -619,11 +619,11 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
         //}
         
         $scope.showTopFavorite = function(){
-            
+
         }
 
         $scope.showTopRetweet = function(){
-            
+
         }
 
         function favBarClick(){
