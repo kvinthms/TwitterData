@@ -64,7 +64,7 @@
               <h2><i class="fas fa-bullhorn"></i></h2>
             </div>
             <div style="display:inline-block; margin-left:35%;" class="align-items-center cardtitletext">
-              <h2>Top 10 <em>{{topic}}</em> Tweets</h2>
+              <h2 align="center">Top 10 <em>{{topic}}</em> Tweet Stats</h2>
             </div>
             <div>
               <h2 class="no-result" style="display: none"><i class="fab fa-twitter" style="transform:rotate(-180deg); color:rgba(0, 172, 238, 0.2); font-size:200px"></i></h2>
@@ -73,7 +73,8 @@
             <div>
               <h2> </h2>
             </div>
-            <div class="btn-group btn-group-toggle hide-btn" data-toggle="buttons" style="margin-left:46%;">
+            <h5 align="center"><font color="gray">Start by selecting a sorting method here</font></h5>
+            <div class="btn-group btn-group-toggle hide-btn" data-toggle="buttons" style="margin-left:48%;">
               <label class="btn btn-outline-secondary active" ng-click="barTweetsFavorites()" data-toggle="tooltip" title="Sort by Favorites">
                 <input type="radio" name="graph-filter" id="likes-vs-tweet" autocomplete="off" checked><i class="fas fa-heart"></i>
               </label>
@@ -90,7 +91,7 @@
               <h2><i class="fab fa-twitter"></i></h2>
             </div>
             <div class="cardtitletext" style="display:inline-block; margin-left:39%">
-              <h2><em>{{topic}}</em> Tweets</h2></h2>
+              <h2 align="center">Top 15 <em>{{topic}}</em> Tweets</h2></h2>
             </div>
             <div>
               <h2> </h2>
@@ -135,7 +136,7 @@
               <h2><i class="fas fa-hourglass-half"></i></h2>
             </div>
             <div style="display:inline-block; margin-left:35%" class="cardtitletext">
-              <h2><em>{{topic}}</em> Tweets Chronology</h2>
+              <h2 align="center"><em>{{topic}}</em> Tweets Chronology</h2>
             </div>
             <div>
               <h2 class="no-result" style="display: none"><i class="fab fa-twitter" style="transform:rotate(-180deg); color:rgba(0, 172, 238, 0.2); font-size:200px;"></i></h2>
@@ -170,7 +171,7 @@
             <div>
               <h2> </h2>
             </div>
-            <div class="btn-group btn-group-toggle hide-btn" style="margin-left: 53%" data-toggle="buttons">
+            <div class="btn-group btn-group-toggle hide-btn" style="margin-left: 48%" data-toggle="buttons">
               <label class="btn btn-outline-secondary active" ng-click="barUsersFollowers()" data-toggle="tooltip" title="Sort by Followers">
                 <input type="radio" name="graph-filter" id="users-vs-followers" autocomplete="off" checked><i class="fas fa-user-friends"></i>
               </label>

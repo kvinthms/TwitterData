@@ -2,90 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b883acd1-343c-42a2-90cf-cf64059da7ec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/datapage_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/topic.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/js/controllers/TwitterController.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/js/controllers/TwitterController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/CONTRIBUTING.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/LICENCE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/LICENCE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/clover.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/clover.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/coverage-final.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/coverage-final.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/error/httperror.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/error/httperror.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/error/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/error/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/error/valueerror.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/error/valueerror.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/formatter/gpxformatter.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/formatter/gpxformatter.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/formatter/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/formatter/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/formatter/stringformatter.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/formatter/stringformatter.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/abstractgeocoder.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/abstractgeocoder.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/agolgeocoder.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/agolgeocoder.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/datasciencetoolkitgeocoder.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/datasciencetoolkitgeocoder.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/freegeoipgeocoder.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/freegeoipgeocoder.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/geocodiogeocoder.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/geocodiogeocoder.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/googlegeocoder.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/googlegeocoder.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/heregeocoder.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/heregeocoder.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/locationiqgeocoder.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/locationiqgeocoder.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/mapquestgeocoder.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/mapquestgeocoder.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/mapzengeocoder.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/mapzengeocoder.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/nominatimmapquestgeocoder.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/nominatimmapquestgeocoder.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/opencagegeocoder.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/opencagegeocoder.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/opendatafrancegeocoder.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/opendatafrancegeocoder.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/openmapquestgeocoder.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/openmapquestgeocoder.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/openstreetmapgeocoder.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/openstreetmapgeocoder.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/pickpointgeocoder.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/pickpointgeocoder.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/smartystreetsgeocoder.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/smartystreetsgeocoder.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/teleportgeocoder.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/teleportgeocoder.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/tomtomgeocoder.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/tomtomgeocoder.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/virtualearth.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/virtualearth.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/yandexgeocoder.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoder/yandexgeocoder.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoderfactory.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/geocoderfactory.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/helper.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/helper.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/httpadapter/httpadapter.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/httpadapter/httpadapter.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/httpadapter/httpsadapter.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/httpadapter/httpsadapter.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/httpadapter/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/httpadapter/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/httpadapter/requestadapter.js.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/httpadapter/requestadapter.js.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/lib/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/prettify.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/prettify.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/prettify.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/prettify.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/sorter.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov-report/sorter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov.info" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/coverage/lcov.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/error/httperror.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/error/httperror.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/error/valueerror.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/error/valueerror.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/formatter/gpxformatter.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/formatter/gpxformatter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/formatter/stringformatter.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/formatter/stringformatter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/abstractgeocoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/abstractgeocoder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/agolgeocoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/agolgeocoder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/datasciencetoolkitgeocoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/datasciencetoolkitgeocoder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/freegeoipgeocoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/freegeoipgeocoder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/geocodiogeocoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/geocodiogeocoder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/googlegeocoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/googlegeocoder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/heregeocoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/heregeocoder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/locationiqgeocoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/locationiqgeocoder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/mapquestgeocoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/mapquestgeocoder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/mapzengeocoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/mapzengeocoder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/nominatimmapquestgeocoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/nominatimmapquestgeocoder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/opencagegeocoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/opencagegeocoder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/opendatafrancegeocoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/opendatafrancegeocoder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/openmapquestgeocoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/openmapquestgeocoder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/openstreetmapgeocoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/openstreetmapgeocoder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/pickpointgeocoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/pickpointgeocoder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/smartystreetsgeocoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/smartystreetsgeocoder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/teleportgeocoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/teleportgeocoder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/tomtomgeocoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/tomtomgeocoder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/virtualearth.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/virtualearth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/yandexgeocoder.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoder/yandexgeocoder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoderfactory.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/geocoderfactory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/helper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/httpadapter/httpadapter.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/httpadapter/httpadapter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/httpadapter/httpsadapter.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/httpadapter/httpsadapter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/lib/httpadapter/requestadapter.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/lib/httpadapter/requestadapter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/node-geocoder/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/node-geocoder/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/topic.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/topic.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/twitter.server.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/twitter.server.controller.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -111,7 +29,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/js/factories/twitterFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
+            <state relative-caret-position="493">
               <caret line="35" column="6" lean-forward="true" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
             </state>
           </provider>
@@ -120,11 +38,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/topic.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="108" column="101" selection-start-line="108" selection-start-column="101" selection-end-line="108" selection-end-column="101" />
+            <state relative-caret-position="33">
+              <caret line="102" column="77" selection-start-line="102" selection-start-column="77" selection-end-line="102" selection-end-column="77" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#em#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#h2#0;n#div#3;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h4#0;n#a#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#a#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -132,6 +52,8 @@
                 <element signature="n#style#0;n#h4#1;n#a#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#h4#1;n#a#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#1;n#h4#1;n#a#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#div#0;n#div#2;n#div#1;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#div#3;n#div#1;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -140,8 +62,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/navbar_template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+            <state relative-caret-position="51">
+              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -149,10 +80,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
+            <state relative-caret-position="17">
               <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -161,8 +94,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/controllers/twitter.server.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="183" column="29" lean-forward="true" selection-start-line="183" selection-start-column="29" selection-end-line="183" selection-end-column="29" />
+            <state relative-caret-position="442">
+              <caret line="44" column="24" lean-forward="true" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -172,15 +105,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
               <caret line="16" selection-start-line="16" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/routes/login.server.routes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -229,11 +153,17 @@
       <find>areatop</find>
       <find>could</find>
       <find>check</find>
-      <find>sort</find>
       <find>label</find>
       <find>first</find>
       <find>navb</find>
       <find>{{x</find>
+      <find>chr</find>
+      <find>sort</find>
+      <find>searc</find>
+      <find>sea</find>
+      <find>search</find>
+      <find>{{t</find>
+      <find>{{</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -265,18 +195,18 @@
         <option value="$PROJECT_DIR$/server/routes/login.server.routes.js" />
         <option value="$PROJECT_DIR$/client/js/controllers/loginController.js" />
         <option value="$PROJECT_DIR$/client/login.html" />
-        <option value="$PROJECT_DIR$/client/index.html" />
         <option value="$PROJECT_DIR$/client/navbar_template.html" />
         <option value="$PROJECT_DIR$/client/datapage_template.html" />
-        <option value="$PROJECT_DIR$/server/controllers/twitter.server.controller.js" />
         <option value="$PROJECT_DIR$/client/js/controllers/areaTopicController.js" />
+        <option value="$PROJECT_DIR$/server/controllers/twitter.server.controller.js" />
+        <option value="$PROJECT_DIR$/client/index.html" />
         <option value="$PROJECT_DIR$/client/topic.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="1905" />
-    <option name="width" value="1948" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-15" />
+    <option name="width" value="1950" />
     <option name="height" value="2075" />
   </component>
   <component name="ProjectView">
@@ -392,18 +322,18 @@
       <workItem from="1554056959904" duration="7306000" />
       <workItem from="1554070484042" duration="2480000" />
       <workItem from="1555440681778" duration="2420000" />
-      <workItem from="1555990258919" duration="23855000" />
+      <workItem from="1555990258919" duration="27469000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52811000" />
+    <option name="totallyTimeSpent" value="56425000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="762" y="0" width="779" height="830" extended-state="0" />
+    <frame x="-6" y="-6" width="1549" height="837" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49142858" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49142858" visible="true" weight="0.12285337" />
       <window_info id="Structure" order="1" sideWeight="0.50857145" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -543,13 +473,6 @@
     <entry file="file://$PROJECT_DIR$/client/logo.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/config/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -586,23 +509,6 @@
         <state relative-caret-position="-561" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/navbar_template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/config/express.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -610,24 +516,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/twitter.server.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="183" column="29" lean-forward="true" selection-start-line="183" selection-start-column="29" selection-end-line="183" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/routes/twitter.server.routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/js/factories/twitterFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="35" column="6" lean-forward="true" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -645,13 +537,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/js/factories/twitterFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="35" column="6" lean-forward="true" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/twitter.server.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="44" column="24" lean-forward="true" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/navbar_template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/topic.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="108" column="101" selection-start-line="108" selection-start-column="101" selection-end-line="108" selection-end-column="101" />
+        <state relative-caret-position="33">
+          <caret line="102" column="77" selection-start-line="102" selection-start-column="77" selection-end-line="102" selection-end-column="77" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#em#0;n#h2#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#h2#0;n#div#3;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h4#0;n#a#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#a#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -659,6 +593,8 @@
             <element signature="n#style#0;n#h4#1;n#a#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#h4#1;n#a#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#1;n#h4#1;n#a#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#1;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#div#2;n#div#1;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#div#0;n#div#3;n#div#1;n#div#2;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
