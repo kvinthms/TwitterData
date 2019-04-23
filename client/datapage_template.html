@@ -70,8 +70,16 @@
             </div>
             <div>
               <h2 class="no-result" style="display: none"><i class="fab fa-twitter" style="transform:rotate(-180deg); color:rgba(0, 172, 238, 0.2); font-size:200px"></i></h2>
-              <h2></h2>
-              <h3>{{tweetText}}</h3>
+              <div ng-repeat="x in tweetss">
+<!--                 <a href={{picURL}} target="_blank"> -->
+                  <img src={{x.user.profile_image_url_https}} alt="profile-pic" id="profile-pic">
+<!--                 </a> -->
+<!--                 <a href={{x.}} target="_blank"> -->
+                  <h2>{{x.user.name}}</h2>
+                  <p>{{x.user.screen_name}}</p>
+<!--                 </a> -->
+                <h3>{{x.text}}</h3>
+              </div>
             </div>
             <div class="btn-group btn-group-toggle hide-btn" data-toggle="buttons" style="margin-left: 50%">
               <label class="btn btn-outline-secondary active" ng-click="showTopFavorite()" data-toggle="tooltip" title="Sort by Favorites">

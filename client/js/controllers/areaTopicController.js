@@ -26,7 +26,7 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                     return;
                 }
                 responseData = response.data.statuses;
-                $scope.showTopFavorite();
+                $scope.tweetss = responseData;
                 $scope.barTweetsFavorites();
                 favBarClick();
                 $scope.lineFavorites();
@@ -52,7 +52,7 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
                 }
                 // console.log("Called this on init with values " + place + " and " + topic);
                 responseData = response.data.statuses;
-                $scope.showTopFavorite();
+                $scope.tweetss = responseData;
                 $scope.barTweetsFavorites();
                 favBarClick();
                 $scope.lineFavorites();
@@ -619,14 +619,6 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
             }
         //}
         
-        $scope.showTopFavorite = function(){
-            responseData.sort(sorting("favorite_count"));
-            $scope.tweetText = responseData[0].text;
-        }
-
-        $scope.showTopRetweet = function(){
-
-        }
 
         function favBarClick(){
             document.getElementById('top-tweets').addEventListener('click', function(event){
