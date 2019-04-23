@@ -57,7 +57,7 @@ angular.module('twitter').controller('TwitterController', ['$scope', 'Twitter', 
             var ctx = document.getElementById('test-chart').getContext('2d');
             chart = new Chart(ctx, {
               // The type of chart we want to create
-              type: 'bar',
+              type: 'horizontalBar',
 
               // The data for our dataset
               data: {
@@ -65,6 +65,7 @@ angular.module('twitter').controller('TwitterController', ['$scope', 'Twitter', 
                 datasets: [{
                   backgroundColor: 'rgba(71,160,235,0.5)',
                   borderColor: 'rgb(71, 160, 235)',
+                  borderWidth: 1,
                   data: labelPop,
                   display: true
                 }]
@@ -77,14 +78,14 @@ angular.module('twitter').controller('TwitterController', ['$scope', 'Twitter', 
                     scaleLabel:
                     {
                       display: true,
-                      labelString: "Topics"
+                      labelString: "Tweets"
                     }
                   }],
                   yAxes: [{
                     scaleLabel:
                     {
                       display: true,
-                      labelString: "Tweets"
+                      labelString: "Topics"
                     }
                   }]
                 },
