@@ -30,11 +30,19 @@ module.exports.init = function() {
    Use the listings router for requests to the api */
   app.use('/api/listings',listingsRouter);
 
+  app.get('/', function (req, res) {
+    res.sendFile(path.resolve('client/index.html'));
+  });
+
+  app.get('/search', function (req, res) {
+    res.sendFile(path.resolve('client/index.html'));
+  });
+
   app.use('/api/twitter', twitterRouter)
 
   /**TODO
    Go to homepage for all routes not specified */
-  app.all('*',(req,res)=>{
+  app.all('*/',(req,res)=>{
     res.redirect('/');
   });
 
