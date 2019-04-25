@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+</head>
+
+<body ng-app="tweetData">
+  <nav class="navbar shadow-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="index.html">
+      <h3 class="inline shadowtext" style="color:white; font-weight:700;"><i class="fab fa-twitter" style="color:rgba(0, 172, 238);"></i> TwitterEdge <i class="fas fa-glasses" style="color:rgba(0, 172, 238);"></i></h3>
+    </a>
+    <div class="logout">
+      <a href="login.html">
+        <button class="btn btn-outline-secondary">Logout</button>
+      </a>
+    </div>
+  </nav>
+  <div style="background-color:gray;opacity:.3;z-index:999;height:100%;width:100%;position:absolute;" ng-if="loading">
+  </div>
+  <div class="spinner-border" ng-if="loading" style="position:absolute;left:47%;top:50%;width:90px;height:90px;z-index:9999"></div>
+  <div class="container-fluid" ng-controller="areaTopicController" style="background-image: linear-gradient(to bottom right, rgba(0, 172, 238, 0.5), white);">
+    
+    <!-- Topic Title -->
+    <div class="row">
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-10">
+        <div class="card align-items-center topmargin-sm side-fade">
+          <div class="card-body">
+            <h2 class="no-result" style="display: none">No results found, try a different trend/location combination!
+            </h2>
+            <div class="yes-result align-items-center">
+              <h2>Showing Results For: <em style="  color: rgba(105, 117, 126, 0.7);">{{topic}}</em> <span ng-if="areaSearch">in {{place}}</span></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="col-md-12">
+        <div class="align-items-center">
+          <a class="btn btn-outline-primary back" style="margin-left:45%" href="index.html">
+            <i class="fas fa-search inline back-content"></i>
+            <span class="inline back-content">New Search</span>
+          </a>
+        </div>
+      </div>
+
+    <!-- Graphs -->
+    <div class="row">
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-10" style="margin-bottom:15px">
+
+        <div class="card topmargin-sm">
+          <div class="card-body">
+            <div style="display:inline-block;" class="card-title">
+              <h2><i class="fas fa-bullhorn"></i></h2>
+            </div>
+            <div style="display:inline-block; margin-left:35%;" class="align-items-center cardtitletext">
+              <h2 align="center">Top 10 <em>{{topic}}</em> Tweet Stats</h2>
+            </div>
+            <div>
+              <h2 class="no-result" style="display: none"><i class="fab fa-twitter" style="transform:rotate(-180deg); color:rgba(0, 172, 238, 0.2); font-size:200px"></i></h2>
+              <canvas id="top-tweets"></canvas>
+            </div>
+            <div>
+              <h2> </h2>
+            </div>
+            <h5 align="center"><font color="gray">Start by selecting a sorting method here</font></h5>
+            <div class="btn-group btn-group-toggle hide-btn" data-toggle="buttons" style="margin-left:48%;">
+              <label class="btn btn-outline-secondary active" ng-click="barTweetsFavorites()" data-toggle="tooltip" title="Sort by Favorites">
+                <input type="radio" name="graph-filter" id="likes-vs-tweet" autocomplete="off" checked><i class="fas fa-heart"></i>
+              </label>
+              <label class="btn btn-outline-secondary" ng-click="barTweetsRetweets()" data-toggle="tooltip" title="Sort by Retweets">
+                <input type="radio" name="graph-filter" id="retweets-vs-tweet" autocomplete="off"><i class="fas fa-retweet"></i>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="card topmargin-sm">
+          <div class="card-body">
+            <div style="display:inline-block;" class="card-title">
+              <h2><i class="fab fa-twitter"></i></h2>
+            </div>
+            <div class="cardtitletext" style="display:inline-block; margin-left:39%">
+              <h2 align="center">Top 15 <em>{{topic}}</em> Tweets</h2></h2>
+            </div>
+            <div>
+              <h2> </h2>
+            </div>
+            <div>
+              <h2 class="no-result" style="display: none"><i class="fab fa-twitter" style="transform:rotate(-180deg); color:rgba(0, 172, 238, 0.2); font-size:200px"></i></h2>
+              <div ng-repeat="x in tweetss">
+                <div class="card card-body topmargin-sm">
+                  <a href={{x.entities.urls[0].url}} target="_blank">
+                    <img src={{x.user.profile_image_url_https}} alt="profile-pic" id="profile-pic" style="float: left; margin-right: 10px; margin-bottom: 0px; border-radius:50px">
+                    <h4 style="margin-bottom: 0px;"><a href={{x.entities.urls[0].url}} style="color:rgba(71,160,235,0.8); font-weight:bold;" target="_blank">{{x.user.name}}</a></h4>
+                    <p style="margin-bottom: 0px;"><a href={{x.entities.urls[0].url}} style="color:rgba(71,160,235,0.6);" target="_blank">@{{x.user.screen_name}}</a></p>
+                    <div class="card card-body" style="background-color:white; margin-bottom: 5px">
+                      <h3 style="margin-bottom: 10px; font-size: 20px; color:rgba(0,0,0,0.7);">{{x.text}}</h3>
+                      <h4 style="margin-bottom: 0px; font-size: small;"> <i class="fas fa-heart" style="margin-left:5px; color: rgba(207,58,96,0.6);"></i> {{x.favorite_count}} <i class="fas fa-retweet" style="margin-left: 10px; color: rgba(0,0,0,0.5);"></i> {{x.retweet_count}}</h4>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card topmargin-lg">
+          <div class="card-body">
+            <div style="display:inline-block;" class="card-title">
+              <h2><i class="fas fa-hourglass-half"></i></h2>
+            </div>
+            <div style="display:inline-block; margin-left:35%" class="cardtitletext">
+              <h2 align="center"><em>{{topic}}</em> Tweets Chronology</h2>
+            </div>
+            <div>
+              <h2 class="no-result" style="display: none"><i class="fab fa-twitter" style="transform:rotate(-180deg); color:rgba(0, 172, 238, 0.2); font-size:200px;"></i></h2>
+              <canvas id="line-graph"></canvas>
+            </div>
+            <div>
+              <h2> </h2>
+            </div>
+            <div class="btn-group btn-group-toggle hide-btn" data-toggle="buttons" style="margin-left: 48%">
+              <label class="btn btn-outline-secondary active" ng-click="lineFavorites()" data-toggle="tooltip" title="Sort by Favorites">
+                <input type="radio" name="graph-filter" id="likes-vs-time" autocomplete="off" checked><i class="fas fa-heart"></i>
+              </label>
+              <label class="btn btn-outline-secondary" ng-click="lineRetweets()" data-toggle="tooltip" title="Sort by Retweets">
+                <input type="radio" name="graph-filter" id="retweets-vs-time" autocomplete="off"><i class="fas fa-retweet"></i>
+              </label>
+            </div>
+          </div>
+        </div>
+      <div style="margin-bottom:8px">
+        <div class="card topmargin-lg">
+          <div class="card-body">
+            <div style="display:inline-block;" class="card-title">
+              <h2><i class="fas fa-crown"></i></h2>
+            </div>
+            <div style="display:inline-block; margin-left: 30%" class="cardtitletext">
+              <h2>Top Users Tweeting About <em>{{topic}}</em></h2></h2>
+            </div>
+            <div>
+              <h2 class="no-result" style="display: none"><i class="fab fa-twitter" style="transform:rotate(-180deg); color:rgba(0, 172, 238, 0.2); font-size:200px"></i></h2>
+              <canvas id="top-users"></canvas>
+            </div>
+            <div>
+              <h2> </h2>
+            </div>
+            <div class="btn-group btn-group-toggle hide-btn" style="margin-left: 48%" data-toggle="buttons">
+              <label class="btn btn-outline-secondary active" ng-click="barUsersFollowers()" data-toggle="tooltip" title="Sort by Followers">
+                <input type="radio" name="graph-filter" id="users-vs-followers" autocomplete="off" checked><i class="fas fa-user-friends"></i>
+              </label>
+              <label class="btn btn-outline-secondary" ng-click="barUsersTweets()" data-toggle="tooltip" title="Sort by Tweet Amount">
+                <input type="radio" name="graph-filter" id="users-vs-tweets" autocomplete="off"><i class="fas fa-comment-dots"></i>
+              </label>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
+
+
+
+
+<!-- Angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+
+<!-- Charts.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+<!-- BOOTSTRAP -->
+<!-- Latest compiled and minified CSS -->
+
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- Our Logic -->
+<script src="js/app.js"></script>
+<script src="js/factories/TwitterFactory.js"></script>
+<script src="js/controllers/areaTopicController.js"></script>
+
+<!-- Allows Bootstrap Tooltips (Source: https://www.w3schools.com/bootstrap/bootstrap_tooltip.asp) -->
+<script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip(); 
+});
+</script>

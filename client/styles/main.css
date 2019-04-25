@@ -1,0 +1,151 @@
+body, html, container-fluid {
+  height: 100%;
+  font-family: 'Arimo', sans-serif;
+}
+
+#searchBar {
+  margin: 15px 10px;
+}
+
+.cardtitletext{
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.tableWrapper {
+  max-height: 400px;
+  overflow: auto;
+}
+
+.table-row {
+  cursor: pointer;
+}
+
+.border {
+  border: 1px #337ab7;
+  border-style: solid;
+}
+
+.bold {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.card {
+  background-color:rgba(255, 255, 255, 0.4);
+  border-color: white;
+  box-shadow: 0px 0px 5px white;
+}
+
+.card-title{
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.float-right {
+  float: right;
+}
+
+.topmargin-lg {
+  margin-top: 30px;
+}
+
+.topmargin-sm{
+  margin-top:15px;
+}
+
+.delete-icon:hover {
+  color: #337ab7;
+}
+
+input:focus::placeholder {
+  color: #337ab7;
+}
+
+.navbar {
+  background-color: #e3f2fd;
+}
+
+.btn-group-toggle>label:hover {
+  cursor: pointer;
+}
+
+.logo {
+  height: 50px;
+  width: 96px;
+}
+
+.title {
+  display: inline;
+  font-size: 40px;
+}
+
+.topic-title>h2 {
+  margin-bottom: -20px;
+  /*padding-top: 0px;*/
+}
+
+.table-wrapper {
+  height: 200px;
+  overflow: auto;
+}
+
+.graph {
+  height: 400px;
+}
+
+.refine-area {
+  margin: 10px auto;
+}
+
+.inline{
+  display: inline;
+}
+
+.back-content{
+  font-size: 25px;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: 'Arimo', sans-serif;
+  font-size: 22px;
+}
+
+.back{
+  margin-top: 35px;
+  margin-left: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-color: white;
+}
+
+.back:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: white;
+}
+
+.yes-result {
+  padding-top: 5px;
+  color:rgba(0, 0, 0, 0.7);
+}
+
+.indexbtn {
+  border-color: white;
+  background-color: rgba(255, 255, 255, 0.4);
+  color: rgb(105, 117, 126);
+}
+
+.submitbtn {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: rgb(105, 117, 126);;
+}
+
+.side-fade {
+  border-radius: 0px;
+  border-left-color: rgba(0, 0, 0 ,0);
+  border-right-color: rgba(0, 0, 0 ,0);
+  box-shadow: 30px 0px 20px -3px rgba(255, 255, 255, 0.4), -30px 0px 20px rgba(255, 255, 255, 0.2), -5px 0px 20px rgba(255, 255, 255, 0.4);
+}
+
+.shadowtext{
+  text-shadow: 0px 0px 8px rgb(0, 172, 238);
+}
+
+
+
+
