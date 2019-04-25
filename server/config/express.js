@@ -42,7 +42,7 @@ module.exports.init = function() {
 
   /**TODO
    Go to homepage for all routes not specified */
-  app.all('*/',(req,res)=>{
+  app.all('*',(req,res)=>{
     res.redirect('/');
   });
 
