@@ -104,8 +104,10 @@
                     <img src={{x.user.profile_image_url_https}} alt="profile-pic" id="profile-pic" style="float: left; margin-right: 10px; margin-bottom: 0px; border-radius:50px">
                     <h4 style="margin-bottom: 0px;"><a href={{x.entities.urls[0].url}} style="color:rgba(71,160,235,0.8); font-weight:bold;" target="_blank">{{x.user.name}}</a></h4>
                     <p style="margin-bottom: 0px;"><a href={{x.entities.urls[0].url}} style="color:rgba(71,160,235,0.6);" target="_blank">@{{x.user.screen_name}}</a></p>
-                    <h3 style="margin-bottom: 5px; font-size: 25px; color:rgba(0,0,0,0.7);"><a href={{x.entities.urls[0].url}} target="_blank">{{x.text}}</a></h3>
-                    <h4 style="margin-bottom: 0px; font-size: small;"> <i class="fas fa-heart" style="margin-left:5px; color: rgba(207,58,96,0.6);"></i> {{x.favorite_count}} <i class="fas fa-retweet" style="margin-left: 10px; color: rgba(0,0,0,0.5);"></i> {{x.retweet_count}}</h4>
+                    <div class="card card-body" style="background-color:white; margin-bottom: 5px">
+                      <h3 style="margin-bottom: 5px; font-size: 20px; color:rgba(0,0,0,0.7);">{{x.text}}</h3>
+                      <h4 style="margin-bottom: 0px; font-size: small;"> <i class="fas fa-heart" style="margin-left:5px; color: rgba(207,58,96,0.6);"></i> {{x.favorite_count}} <i class="fas fa-retweet" style="margin-left: 10px; color: rgba(0,0,0,0.5);"></i> {{x.retweet_count}}</h4>
+                    </div>
                   </a>
                 </div>
               </div>
