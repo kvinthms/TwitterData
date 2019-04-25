@@ -1,206 +1,104 @@
+<!--Essential HTML Header Stuff-->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Kevin Thomas w/ inspiration from the Dashboard Template · Bootstrap">
 
+<!--Head of HTML-->
+<head>
+  <!--Metadata about the page, nothing of functional importance here-->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--Browswer Tab Title-->
   <title>
-    Twitter Data Analytics
+    TwitterData
   </title>
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!--StyleSheets-->
+  <!--BootStrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!--Our Custom CSS Stylesheet-->
   <link rel="stylesheet" href="styles/dashboard.css">
 
-  <style></style>
-
-</head>
-<body>
-<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-  <!--<div class="small-12 large-2 columns logo-wrapper">-->
-  <a href="#" class="navbar-brand">
-    <img src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c53e.png" width="50" height="50" alt="TweetEdge">
-    Twitter Data Analytics
-  </a>
-
-  <!--</div>-->
-  <ul class="navbar-nav px-3">
-    <li class="nav-item text-nowrap">
-      <a class="nav-link" href="#">
-        Sign out
-      </a>
-    </li>
-  </ul>
-</nav>
-
-<div class="container-fluid">
-  <div class="row">
-    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-      <div class="sidebar-sticky">
-        <ul class="nav flex-column">
-          <!--These filler column elements are used (li - first 2) but shouldn't be necessary, CSS issue?-->
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="filler"></span>
-
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="filler"></span>
-
-            </a>
-          </li>
-          <!-- Dashboard doesn't appear, don't know why-->
-          <li class="nav-item">
-            <a class="nav-link active" href="#">
-              <span data-feather="home"></span>
-              Dashboard <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="location.html">
-              <span data-feather="location"></span>
-              Location Search
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="shopping-cart"></span>
-              Search Tweets
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="users"></span>
-              Trending Topics
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="bar-chart-2"></span>
-              Who Follows Who?
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="layers"></span>
-              View Data
-            </a>
-          </li>
-        </ul>
-
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-          <span>Data Sets</span>
-          <a class="d-flex align-items-center text-muted" href="#">
-            <span data-feather="plus-circle"></span>
-          </a>
-        </h6>
-        <ul class="nav flex-column mb-2">
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Current month
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Last quarter
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Engagement
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Users
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-</div>
-
-<!--Insert display here for either trends or location feature-->
-<!-- ng-model ng-click needs work; see if can make search bar do active search without click-->
-
-<!-- This chart display is broken, fix it create a generic graphic overlay -->
-<!--
-<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-  <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
-    <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
-      <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
-      </div>
-    </div>
-    <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
-      <div style="position:absolute;width:200%;height:200%;left:0; top:0">
-      </div>
-    </div>
-  </div>
-  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Dashboard</h1>
-    <div class="btn-toolbar mb-2 mb-md-0">
-      <div class="btn-group mr-2">
-        <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-        <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-      </div>
-      <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-        This week
-      </button>
-    </div>
-  </div>
-
-  <canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="1947" height="820" style="display: block; height: 328px; width: 779px;"></canvas>
+  <!--
+    Recommended by W3Schools to put the script tag for Angular's api up 
+    here, but we *could* be safe putting it at the bottom with the other 
+    script tags if need be
   -->
-<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
 
-  <div>
-    <a class="filler"></a>
-  </div>
+<!--Entering body of Page-->
+<!--
+ng-app directive goes here to assign the body of the page to our app
+ng-controller directive assigns the controller to the page as well
 
-  <h2>Section title</h2>
-  <div class="table-responsive">
-    <table class="table table-striped table-sm">
-      <thead>
-      <tr>
-        <th>#</th>
-        <th>Header</th>
-        <th>Header</th>
-        <th>Header</th>
-        <th>Header</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>#####</td>
-        <td>This</td>
-        <td>is</td>
-        <td>a</td>
-        <td>sample</td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
+all containers within the body should also inherit this assignment
+-->
+<body ng-app="TwitterData">
 
-  <div class="row">
-    <div class="content">
-      <nav class="center">
-        <form novalidate class="simple form">
-          <input type="text" ng-model=""/>
-          <button class="btn btn-primary" ng-click="">Search</button>
-        </form>
-      </nav>
+  <!--Navigation Bar-->
+  <!--All this class stuff is for the styling, it's bootstrap.-->
+  <nav class="navbar navbar-dark shadow-sm">
+
+    <!--Logo-->
+    <!--clicking the image will link back to the homepage thanks to href-->
+      <a href="index.html" class="navbar-brand">
+        <img src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c53e.png" width="50" height="50" alt="Home">
+        TwitterData
+      </a>
+
+    <!--Sign Out Button (no functionality yet)-->
+    <div class="sign-out">
+        <button class="btn btn-outline-secondary">Sign out</button>
+    </div>
+  </nav>
+
+  <div class="container-fluid" ng-controller="TwitterController">
+    <div class="row justify-content-center">
+      <div class="col-8 align-items-center">
+        <div class="row align-items-center">
+          <div class="input-group input-group-lg topmargin-lg">
+            <div class="input-group-prepend">
+              <div class="btn-group btn-group-toggle hide-btn" data-toggle="buttons">
+                <label class="btn btn-outline-secondary active" ng-click="setSearch(false)">
+                  <input type="radio" name="area-button" autocomplete="off">Area
+                </label>
+              </div>
+            </div>
+            <input placeholder="Keyword" type="text" class="form-control" ng-model="userPlace" ng-keyup="$event.keyCode == 13 ? searchTrend() : null">
+            <div class="input-group-append">
+              <button ng-click="searchTrend()" class="btn btn-outline-secondary">See Trends</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-8 topmargin-lg">
+        <canvas id="test-chart"></canvas>
+        <div id="no-results" style="display: none">
+          <h1>Sorry</h1>
+          <h2>No search results found ... Try again</h2>
+        </div>
+      </div>
     </div>
   </div>
-</main>
-
-<!--May need a jQuery script tag here-->
 </body>
 </html>
+
+  <!--Script Tags-->
+  <!--jquery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  
+  <!--angular error stuff-->
+  <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+
+  <!--Charts-->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  
+  <!--Our own js files-->
+  <script src="js/app.js"></script>
+  <script src="js/controllers/listingController.js"></script>
+  <script src="js/factories/twitterFactory.js"></script>

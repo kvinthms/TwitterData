@@ -4,11 +4,13 @@ var path = require('path'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     config = require('./config'),
-    listingsRouter = require('../routes/listings.server.routes');
+    listingsRouter = require('../routes/listings.server.routes'),
+    twitterRouter = require('../routes/tweet.server.routes.js'),
+    cors = require(cors);
 
 module.exports.init = function() {
     //connect to database
-    mongoose.connect(config.db.uri);
+    mongoose.connect(config.db.uri, {useMongoClient: true});
 
     //initialize app
     var app = express();
@@ -19,13 +21,16 @@ module.exports.init = function() {
     //body parsing middleware
     app.use(bodyParser.json());
 
-    app.use("/", express.static('client'));
+    app.use(cors());
 
+    app.use('/', express.static(path.join(__dirname,'./../../client'))); //the argument for .static() might need changing
 
     app.use('/api/listings', listingsRouter);
 
-    app.use('*/', function (req, res) {
-        res.sendFile(path.resolve('client/index.html'));
+    app.use('/api/twitter', tweetRouter);
+
+    app.all('*', (req, res) => {
+        res.redirect('/');
     });
 
     return app;

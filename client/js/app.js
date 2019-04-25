@@ -1,5 +1,5 @@
-/* register the modules the application depends upon here*/
-angular.module('listings', []);
+//define the module our app depends on here
+angular.module('twitter', []);
 
-/* register the application and inject all the necessary dependencies */
-var app = angular.module('directoryApp', ['listings']);
+//init the app
+var app = angular.module('TwitterData', ['twitter']);
