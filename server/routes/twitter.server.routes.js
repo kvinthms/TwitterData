@@ -2,16 +2,16 @@ var twitter = require('../controllers/twitter.server.controller.js'),
     express = require('express'),
     router = express.Router();
 
-router.route('https://vast-scrubland-38554.herokuapp.com/')
+router.route('/')
     .get(twitter.test);
 
-router.route('https://vast-scrubland-38554.herokuapp.com/topicByArea/:place/:topic/:isHash')
+router.route('/topicByArea/:place/:topic/:isHash')
 	.get(twitter.areaTopicTweets);
 
-router.route('https://vast-scrubland-38554.herokuapp.com/trend/:topic/:isHash')
+router.route('/trend/:topic/:isHash')
 	.get(twitter.topicTweets);
 
-router.route('https://vast-scrubland-38554.herokuapp.com/:userPlace')
+router.route('/:userPlace')
 	.get(twitter.dynamicTrends);
 
 
