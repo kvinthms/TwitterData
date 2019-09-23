@@ -32,10 +32,6 @@ var options = {
 
 var geocoder = NodeGeocoder(options);
 
-
-// functionality
-
-
 function checkValidArea(userInput) {
     let promise = new Promise(function (resolve, reject) {
         client.get('trends/available', function (error, response) {
@@ -44,7 +40,7 @@ function checkValidArea(userInput) {
                 reject(error);
                 throw error;
             }
-            //userInput = userInput.charAt(0).toUpperCase() + userInput.substring(1).toLowerCase();
+
             for (let i = 0; i < response.length; i++) {
                 if (response[i].name == userInput) {
                     console.log("found woeid is: " + response[i].woeid);
@@ -60,29 +56,6 @@ function checkValidArea(userInput) {
 
 
 exports.test = (req, res, next) => {
-    // return client.get('trends/place', { id: '615702' }, function (error, response) {
-    //     if (error) {
-    //         console.log(error);
-    //         throw error;
-    //     }
-    //     twitter_response = response;
-    //     console.log("got info from twitter");
-
-    //     function sortTrends(tweet_volume) {
-    //         return function (a, b) {
-    //             if (a[tweet_volume] < b[tweet_volume]) {
-    //                 return 1;
-    //             }
-    //             else if (a[tweet_volume] > b[tweet_volume]) {
-    //                 return -1;
-    //             }
-    //             return 0;
-    //         }
-    //     }
-    //     twitter_response[0].trends.sort(sortTrends("tweet_volume"));
-
-    //     return res.status(200).json(twitter_response);
-    // });
     return res.status(200).json("Sorry, That location is either not trending or is not valid.");
 }
 

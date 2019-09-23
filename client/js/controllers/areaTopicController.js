@@ -664,7 +664,7 @@ angular.module('twitter').controller('areaTopicController', ['$scope', 'Twitter'
         }
 
 
-        //function needed for modulo :(
+        //function needed for modulo
         function mod(a, b){
             return ((a % b)+b)%b;
         }
