@@ -8,6 +8,14 @@ var client = new Twitter({
     consumer_secret: 'RceoBEhRvmGWioysz5PrDDGgv1OhKlITmbKkjEIpJZTxc6BZZM',
     access_token_key: '1070800768230400001-S7sB9x9emGcGJeNPQHOp6xaCUxLqMl',
     access_token_secret: 'V7djS4GQmrl3d2soJEm0T30KSev6bpP15i7fJ4dFemNuF'
+
+    /* Alk keys if they need to be changed later
+    consumer_key: 'nZZsNEVDuQg5mePml1Z9ZL95h',
+    consumer_secret: 'KO5jwX1bMzcowYwzTzHH6Ms6fyzhrKrYG6lfGgaZ6bez1ZP1Bu',
+    access_token_key: '1686810979-ug2K802Rpfg310Sfisz1PYas2u7M8C0Y3ViB9co',
+    access_token_secret: 'N6NisfVOppafRYcoBEmVo5VxE8sWNfeAXzkD8O7UOiuTX'
+     */
+
 });
 
 
@@ -18,14 +26,11 @@ var options = {
     provider: 'opencage',
     httpAdapter: 'https',
     apiKey: 'c0ed9858330c48d7be89571e65adadcc',
+    //alt apiKey: '222ef8e151084b4ea0c6747a5a33f564',
     formatter: null
 };
 
 var geocoder = NodeGeocoder(options);
-
-
-// functionality
-
 
 function checkValidArea(userInput) {
     let promise = new Promise(function (resolve, reject) {
@@ -35,7 +40,7 @@ function checkValidArea(userInput) {
                 reject(error);
                 throw error;
             }
-            //userInput = userInput.charAt(0).toUpperCase() + userInput.substring(1).toLowerCase();
+
             for (let i = 0; i < response.length; i++) {
                 if (response[i].name == userInput) {
                     console.log("found woeid is: " + response[i].woeid);
@@ -51,29 +56,6 @@ function checkValidArea(userInput) {
 
 
 exports.test = (req, res, next) => {
-    // return client.get('trends/place', { id: '615702' }, function (error, response) {
-    //     if (error) {
-    //         console.log(error);
-    //         throw error;
-    //     }
-    //     twitter_response = response;
-    //     console.log("got info from twitter");
-
-    //     function sortTrends(tweet_volume) {
-    //         return function (a, b) {
-    //             if (a[tweet_volume] < b[tweet_volume]) {
-    //                 return 1;
-    //             }
-    //             else if (a[tweet_volume] > b[tweet_volume]) {
-    //                 return -1;
-    //             }
-    //             return 0;
-    //         }
-    //     }
-    //     twitter_response[0].trends.sort(sortTrends("tweet_volume"));
-
-    //     return res.status(200).json(twitter_response);
-    // });
     return res.status(200).json("Sorry, That location is either not trending or is not valid.");
 }
 

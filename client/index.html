@@ -13,14 +13,16 @@
 
 <body ng-app="tweetData">
   <nav class="navbar shadow-sm navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.html">
+    <a class="navbar-brand" href="/index.html">
 <!--       <img src="logo.png" class="logo" alt="Home"> -->
       <h3 class="inline shadowtext" style="color:white; font-weight:700;"><i class="fab fa-twitter" style="color:rgba(0, 172, 238);"></i> TwitterEdge <i class="fas fa-glasses" style="color:rgba(0, 172, 238);"></i></h3>
     </a>
 
+    <!-- Removing the Logout option but leaving it for possible implementation later
     <div class="logout">
-      <button class="btn btn-outline-secondary btn">Logout</button>
+      <button class="btn btn-outline-secondary btn"></button>
     </div>
+    -->
   </nav>
   <div class="container-fluid" ng-controller="TwitterController" style="background-image: linear-gradient(to bottom right, rgba(0, 172, 238, 0.5), white); padding-bottom:460px">
 
@@ -30,10 +32,10 @@
           <div class="input-group input-group-lg topmargin-lg">
             <div class="input-group-prepend">
               <div class="btn-group btn-group-toggle hide-btn" data-toggle="buttons">
-                <label class="btn btn-outline-light active indexbtn" ng-click="setSearch(false)" style="padding-top:11px;" data-toggle="tooltip" title="Search for tweet information about a topic">
+                <label class="btn btn-outline-light active" ng-click="setSearch(false)" style="padding-top:11px;" data-toggle="tooltip" title="Search for tweet information about a topic">
                   <input type="radio" name="topic-button" autocomplete="off" checked>Keyword
                 </label>
-                <label class="btn btn-outline-light indexbtn" ng-click="setSearch(true)" style="padding-top:11px;" data-toggle="tooltip" title="Search for trending topics within an area">
+                <label class="btn btn-outline-light" ng-click="setSearch(true)" style="padding-top:11px;" data-toggle="tooltip" title="Search for trending topics within an area">
                   <input type="radio" name="area-button" autocomplete="off">Location
                 </label>
               </div>
@@ -41,7 +43,7 @@
             <input placeholder="Searches are case sensitive" type="text" class="form-control" ng-model="userPlace"
               ng-keyup="$event.keyCode == 13 ? searchTrend() : null">
             <div class="input-group-append">
-              <button ng-click="searchTrend()" class="btn btn-outline-light submitbtn">Search</button>
+              <button ng-click="searchTrend()" class="btn btn-outline-light">Search</button>
             </div>
           </div>
         </div>
@@ -89,12 +91,13 @@
 <!-- Charts.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
+
 <!-- Our Logic -->
 <script src="js/app.js"></script>
 <script src="js/controllers/TwitterController.js"></script>
 <script src="js/factories/TwitterFactory.js"></script>
 
-<!-- Allows Bootstrap Tooltips (Source: https://www.w3schools.com/bootstrap/bootstrap_tooltip.asp) -->
+<!-- Allows Bootstrap Tooltips (Source: https://www.w3schools.com/bootstrap/bootstrap_tooltip.asp)
 <script>
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip(); 
