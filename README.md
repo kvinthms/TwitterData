@@ -7,7 +7,7 @@
 The purpose of TweetEdge is to provide an easy to use twitter analytics platform, allowing users to easily search trends, locational trends, and few graphs curating the information. 
 
 ### Issues
-For some reason this app doesn not work properly on its Heroku deployment. If you would like to see the functionality of this code, consider downloading this repository to your local machine.
+For some reason this app does not work properly on its Heroku deployment. If you would like to see the functionality of this code, consider downloading this repository to your local machine.
 The application can be run by using 'node server' within the code directory and visiting localhost:PORT and replacing PORT with the PORT that the app is listening on (Probably 8000 or 8080).
 
 ### Current features 
