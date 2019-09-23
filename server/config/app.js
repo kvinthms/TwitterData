@@ -8,7 +8,7 @@ module.exports.start = function() {
   if (port == null || port == "") {
     port = 8000;
   }
-  app.listen(config.port, function() {
-    console.log('App listening on port', config.port);
+  app.listen(port, function() {
+    console.log('App listening on port', port);
   });
 };
