@@ -2,7 +2,7 @@
 
 
 ## A Twitter Analytics app utilizing the Twitter API
-## Created with Angular, Node.JS, HTML, and CSS
+## Created with AngularJS, Express.js, Node.js, HTML, and CSS
 
 The purpose of TweetEdge is to provide an easy to use twitter analytics platform, allowing users to easily search trends, locational trends, and few graphs curating the information. 
 
